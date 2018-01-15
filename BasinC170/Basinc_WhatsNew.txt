@@ -1,0 +1,668 @@
+Basinc History
+
+// history & todo:
+// 1.7      20.11.2017
+
+// Added new toolbar buttons
+// Added toggle breakpoint navigation buttons (see view menu)
+// Added auto backup feature. Basinc saves your work in the background every 3 minutes.
+//                            it keeps 10 copies going back up to 30 minutes in /autoback folder.
+//                            To turn this feature off, use: Options > Filing > Auto Backup
+// Changed - Basinc now requires basinC.bin and basinC.ini rather than old basin.ini.
+
+// 1.7 alpha 25.09.2017
+
+//  Alpha - Broken Undo/Redo behaviour. BETA - Save often to avoid data loss.
+
+//  Fixed - Right button popup menu context operators should detect *declared* variables correctly now
+//  Fixed - Green Ruler Mark at the bottom of the screen should work ok even when cursor in a string.
+//  Fixed - Drag&Drop files to main window works again.
+//  Fixed - Esc key no longer breaks the program if Basinc is not in focus
+//  Fixed - Token table wasn't printing first keywords correctly (eg. RND/SPECTRUM).
+//  Fixed - File dialogs won't stuck at search results anymore
+//  Fixed - Cosmetic fixes of profiling window
+//  Fixed - While using double and triple size fonts, find and replace was not showing the result in the editor
+
+//  Added - Shift+Clicking token table inserts byte code rather than token itself
+//  Added - Tape Browser now accept files via drag&drop
+//  Added - When in full speed emulation, a small arrow is shown at the bottom right corner of display window
+//  Added - Display window preset sizes: 300%,400%,600%
+//  Added - German Translation (Uwe Geiken) [note that translations are for main menu only. ]
+//  Added - External Utility menu item. This item sends basinc's memory snapshot to an external utility, such as an emulator.
+
+
+// 1.697 20.03.2017
+
+//  Added - SimpleCon window warns user if it's still open but interface is disabled in the options.
+//  Added - REM speed <x> command. x is 1-50 (an integer equivalent to Mhz). It may not perform accordingly with commands which perform screen update.
+
+// 1.696 09.09.2014
+//  Added - single instance mode
+//  Added - Command line option: give filename to load
+//  Added - Profiling window New (clears profiling results and starts new profiling) and Refresh (shows immediate results) button.
+//  fixed - token table was printing wrong keywords (again).
+//  fixed - Force Break (Undo) will go back to earlier state than intended (thus overwriting your program).
+
+V1.691 - 02.07.2014
+Changed - Help file won't work on some occasions, changed chm file from a different archive.
+
+V1.69 - 02.07.2014
+
+Changed - Version information changed to more standard "version.revision" form.
+Changed - Autostart bas files is now disabled by default (options>files)
+Fixed - Snapshot loading
+Fixed - Broken Ulaplus behaviour  (aowen)
+Fixed - Broken Sinclair stripes when using double size fonts  (paddy)
+Fixed - Missing Border icons on Screen Paintbox  (paddy)
+Fixed - Token Table Index  (paddy)
+Fixed - String parsing bug. Eg. "LOAD STR$ n CODE" was parsed as "LOAD STR$ ncode"  (paddy)
+Fixed - Ulaplus port read fails 
+Added - "Export Tap..." option to File menu. (quickly saves basic as a tap file) 
+Added - UlaPlus Palette Editor for editing colours in ULAplus registers. (see tools menu)
+Added - Indenting. Warning: EXPERIMENTAL - press F2 to enable/toggle. (see options menu) 
+Added - New functionality test / usage bas programs (see Examples>BAS>Basinc folder)
+Added - Autostart, Save with autostart options are now retained between sessions.
+Added - Spanish language for main screen. (by Sergio Baldoví)
+
+Known bugs
+Lower case 'e' is still not recognised as a variable by the code highligher  (paddy)
+Indenting has some visual bugs, it's not recommended while coding. Might Confuse you. [F2]
+UNDO functionality may not work time to time
+
+V16r3 - 23.04.2012 
+
+Maintainer - Arda Erdikmen
+Fixed - Double and triple size fonts should work properly
+Fixed - HighDPI desktop resizing fixes
+Fixed - Def FN's should work now
+Fixed - Renumber bug won't appear as parsing is now reversed when renumbering.
+Added - Kempston Mouse support (see options menu)
+Added - Kempston Mouse usage example BAS file (see examples folder)
+Added - LAST_K & KSTATE System variables support
+Added - Toggle fast mode at runtime with F1 (don't forget to set focus to display window)
+Added - Fast Resets (basin now opens and resets faster. See options)
+Added - Multilingual Gui (I need to translate all the menus though)
+Added - Most of 15.8 fixes, tools and utilities (too long to list here)
+
+Todo/wip - Memory Manager
+Todo/wip - UlaPlus HAM mode
+Todo/wip - More languages (add your language to languages.pas file and send it to me by below e-mail)
+
+
+Basin
+R14c
+
+Maintainer - Paul Dunn
+Added - You can now search for whole words only in the search/replace dialogs - searching for "1" will not return on "11" or "S1" or "S1S" etc. (Jimmy)
+Added - Address of your current mouse position in screen memory to the paintbox's statusbar. (Badbeard)
+Added - You can now show the attribute grid as well as your own custom grid in the paintbox. (Badbeard)
+Added - Send To Tape option in the binary import/export system.
+Added - Emulation speed to the Emulation options - set it to your desired mHz rating (3.5 is the default).
+Added - Double clicking a System Variable in the list will launch the sysvar editor.
+Added - Animation strip to the UDG/Sprite editor. This allows you to build a "filmstrip" and then to preview it, and also the ability to save it as an animated .gif. (BadBeard)
+Added - Selection movement can now be snapped to the attribute grid, which makes moving coloured selections around a lot easier.
+Added - "Pixellise" tool to SCREEN$ Editor. This will eventually form the core of the "Convert screen to ASCII" tool.
+Added - Onion-skin tool to the Sprite editor. This allows you to see the changes between animation frames on the main grid. Drag any graphic to the new onion-skin preview area below the mainpreview graphic to use.
+Added - The Sprite editor can now handle more than 256 sprites in a bank.
+Added - OVER 1 mode to the SCREEN$ editor - this affects everything you do, and is applied to any tool that sets pixels. (ZXBruno)
+Added - Toolbutton (and corresponding menu item) to the Paintbox for opening the Graphic/Sprite/UDG Editor.
+
+Fixed - People who do daft things with the OUT command and the ZXPrinter get all they deserve, but they no longer crash BASin. (Jimmy)
+Fixed - Access violations when searching/replacing with empty search terms.(Jimmy)
+Fixed - Tapes made with $11 data blocks would cause a crash. BASin now ignores those blocks, but the results of trying to load any subsequent $10 blocks is undefined. (Starglider)
+Fixed - The help section "BASin's tools" didn't link properly to the SCREEN$ Paintbox help file. (Danforth)
+Fixed - The tape creator would automatically add the last file you loaded when you used the menu to "Add from file", rather than showing a file requestor. (Chop983)
+Fixed - Menu shortcuts in the Paintbox wouldn't work unless you first opened the menu. Kind of pointless, that :)
+Fixed - The paintbox will no longer receive multiple mouse wheel messages in one go, so zooming in and out using the mouse wheel is much smoother.
+Fixed - Crashes when flood filling a selection that has been moved partially off the "screen". (Badbeard)
+Fixed - Certain issues with attribute alignment when painting in a selection.
+Fixed - Small bug where issuing a direct command would remove the first digit of the line following it in the editor. (EddieTheWild)
+Fixed - Non-lethal crash when pasting in empty lines (or rather, lines that consist of nothing but spaces). (EddieTheWild)
+Fixed - Toolbar buttons in the SCREEN$ editor should no longer disappear when disabled under Win2k. This /should/ be the last of the Win2k fixes. (LCD)
+Fixed - Lines (particularly DATA lines) that use the BIN function would prepend a "%" symbol to the binary number. (Nonsense in BASIC)
+Fixed - A small oversight that meant PLAY commands which caused errors would not have them trapped properly. (ZXBruno)
+Fixed - Boxes that require an input from the user, which are parsed for BASIC functions, now accept the $ABCD hex-notation. (Jimmy)
+Fixed - BASin was saving a log file when File Requester dialogs are cancelled - I'd left some debug code in there. Oops. (Jimmy)
+
+
+Release 14b Notes: (Credits for bugs found/features requested are in ()s)
+
+Added - Saturation/Contrast enhancement to the Image importer. Now it imports images better in some cases, particularly photos. (LCD)
+Added - Back+Colour method for colour matching in the Image importer - uses the background colour and one other colour per attribute block.
+
+Fixed - Stepping over a REM statement could cause an Access Violation. (Daren)
+Fixed - Win2k users couldn't load anything. Rather than use a decent OS, they forced me to fix it. Tch, eh? (Dave, Rafael Molina)
+Fixed - Win2k users got a black toolbar in the SCREEN$ paintbox. (Daren)
+Fixed - In some XP themes, the paintbox canvas would open too small for the current window size.
+Fixed - Image importer bug where greyscale and "Allow BRIGHT" would not play well together.
+Fixed - The SCREEN$ paintbox's FLASH state indicator would "flash" when changing colours, even if FLASH is not selected. (Starglider)
+Fixed - The LOAD "" menu item will always use the file requester, regardless of whether or not you have a tape inserted. This does not affect manually issued LOAD commands. (Starglider)
+Fixed - The tape creator window will automatically open if you LOAD "" from a tape. (Starglider)
+
+
+Release 14a Notes: (Credits for bugs found/features requested are in ()s)
+
+Added - Mouse pointer options for the paintbox - you can now select to have either no pointer, a crosshair or the standard windows pointer when painting. (ZXBruno)
+Added - CRC32 checking to BAS files. This is not required to load files, but will issue a log warning that the file may have been corrupted after having been saved by BASin.
+
+Fixed - Renumber would bomb out when a computed GO TO (such as GO TO a*4) is encountered. (Radastan)
+Fixed - The email address in the manual for contacting me was displayed wrong, though clicking the link would have sent a mail to the right address. (Metalbrain)
+Fixed - Lines longer than 9,999 characters(!) would be truncated. (Metalbrain)
+Fixed - Selections pasted into the paintbox that ran over the edge of the canvas would cause an error, often unrecoverable. (BadBeard)
+Fixed - Runtime variables which contain Numeric Arrays with too many elements would cause error 2 when auto-run. (MetalBrain)
+Fixed - Win2k users should now be able to load JPEG files in the image importer. (Marko)
+
+
+Release 14 Notes: (Credits for bugs found/features requested are in ()s)
+
+Added - The CPU debugger is no longer "modal" and as such will allow emulation to run whilst it is open. The upshot of this is that the BASIC debugging windows are available whilst it is open.
+Added - The "TO-DO" section to the release notes :) Find it just up there ^
+Added - A new sound option - for computers whose soundcard drivers return inaccurate information about the play position in buffers, there is now a method that synchs to the internal CPU timer. (Daren Pearcy)
+Added - The SCREEN$ paintbox tool. It's basically paintshop/photoshop (the drawing parts) for the Speccy. READ THE MANUAL, cos it don't behave like you expect it to.
+Added - Memory grabber tool. This allows the user to grab a section of memory (specified by an address and size in bytes) and import it into BASIC as DATA, REM etc.
+Added - A simple tool for tokenising/detokenising a whole string on the popupmenu. Basically so I could run Mike Wynne's more pathological uses of the VAL$ function.
+Added - Another simple tool which tells you where in memory the current line is stored. Useful for the new REMStore system.
+Added - Universal binary importer. This utility is used wherever a binary object is to be imported into BASin, either directly into memory or translated into BASIC. It can import as DATA (hex or decimal), REM statements, or as a memory block. It will be used by all tools that produce binary objects (such as the UDG editor and Assembler).
+Added - The UDG editor now "exports" data to the Universal Binary Importer.
+Added - UDG Editor can now create a new blank set of graphics to your specification - just use the "New..." option on the main menu.
+
+Fixed - The undo system had become a little flakey, to say the least. The new system is a tad memory-hungry, but it does work well.
+Fixed - Lines written (in notepad, say) whose line numbers were not correctly ordered are loaded in the proper order now. (Dave Mills)
+Fixed - A nasty crash when inserting new characters into the Graphic/Sprite editor. (Kiwi)
+Fixed - BASin wasn't handling string operations well for strings with double quotes in them. Many thanks to Mike, Spike and Marko for helping me see the bleeding obvious.
+Fixed - The Token Table returned the wrong keyword due to a conflict between 128k and 48k modes
+Fixed - Due to the recent inclusion of 128k keywords, the printing routine didn't display keywords correctly.
+Fixed - The UDG Editor would crash if you tried to open a file which contains more graphics than there is space for in the palette.
+Fixed - A bug which caused lines to be removed if you delete their line number - what should happen is that the line becomes a direct command, and the original line remains in BASIC memory. This may break other stuff, so watch out and report back if that's the case.
+Fixed - Selections that include strings would appear corrupted. (Arda)
+Fixed - A bug where deleting a line with the backspace key would end up corrupting the program. (Arjun)
+Fixed - Problems with loading .bas files with duplicate (and error prone) lines. (Arda)
+Fixed - A small bug that inserted zeros into the DATA stream from the new Binary system.
+Fixed - A nasty bug in the 5-byte -> Floating point conversion routine which caused all sorts of nasty errors. (Jaime Tejedor Gómez)
+Fixed - A small bug in the Graphic Editor's clipboard routines - graphics are no longer restricted to 8x8 pixels, which caused problems. (Woody)
+Fixed - Setting a breakpoint when there's no code to set one on caused a crash in BASin. (Woody)
+Fixed - Menu operations in the graphic editor with a large grid would result in strange behaviour whilst editing graphics. (Woody)
+Fixed - The Parser would not allow lines of code that can be either an expression, or the start of a direct command. This affected the predictive code generator quite badly for direct commands. (Woody)
+Fixed - A bug in the line overwrite protection caused overwritten lines to be merged rather than replaced.
+Fixed - A core bug in the INC/DEC IX/IY opcodes. (Woody)
+Fixed - Appending a binary file to a tape in the Tape Creator would always use the last file rather than let you choose one. (Woody)
+Fixed - A bug in the profiler setup code caused programs with a particular line/statement number (9999:3) to crash the the profiler. (Arda)
+Fixed - A bug in the Binary Number handler for loading .bas files. (Klaus Jahn)
+Fixed - String variables with more quotes than is strictly necessary in a sane program were not saving properly. (Klaus Jahn)
+Fixed - Saving string arrays could be problematic - it didn't work. (Klaus Jahn)
+Fixed - The parser now accepts the function BIN with no argument. (Einar Saukas)
+Fixed - Spacing of 128k keywords entered whilst in 48k mode were wrong.
+ 
+
+Release 13a Notes: (Credits for bugs found/features requested are in ()s)
+
+Added - Re-wrote the UDG editor. It now handles sprites of any size, and multi-UDG editing in the main grid. See the help text for details.
+Added - The Import Binary window will now send any binary file to the BASIC as DATA statements.
+
+Fixed - A small bug where the scrollbars didn't update as multiple lines are pasted in.
+Fixed - A bug in the multi-line clipboard paste routines which resulted in some lost code when escape sequences were expanded due to Delphi's brain-dead TMemo component. (De Vandemar Croup)
+Fixed - Caps lock indicator (C/L graphic at the bottom left) wasn't keeping up with the current state until a new key was pressed. (Arjun Nair)
+Fixed - 128k/48k mode was misreported for a line that ended with a number (such as PRINT 1) and then immediately followed by line 8100. (Arjun Nair)
+
+
+Release 13 Notes: (Credits for bugs found/features requested are in ()s)
+
+Added - Updated the "paste code" routines to accept lines broken BASin-style after ":" and "THEN". This allows you to copy/paste code examples from the manual correctly.
+Added - Altered the examples in the manual to look more like BASin code.
+Added - 128k Snapshot saving - many thanks to BadBeard and Marko for their invaluable help with the conversion from 48k to 128k!
+Added - Program compatibility in the Program Information dialog box - now tells you which model (128k or 48k) your program will run under.
+Added - The BASin manual (help file) has been updated with all the new information about the 128k features.
+Added - All the 128k error reports now function correctly. (Lloyd Garland provided the +2 manual that made the RAM Disk possible!)
+Added - 128k RAMDisk commands - LOAD!, SAVE!, MERGE!, VERIFY!, CAT!, ERASE!. Be aware that using the 48k ZX Printer will corrupt your RAMDisk.
+Added - 128k RAM page bank switching mechanisms for the RAMDisk routines.
+Added - 128k commands PLAY and SPECTRUM to the editor.
+Added - 128k ROM now loads with BASin, and is used to execute the PLAY command. The SPECTRUM command does nothing.
+Added - Errors now take into account the 128k errors for the PLAY command.
+Added - 128k Auto-sensing. If you don't use the 128k commands (PLAY/SPECTRUM/RAMDisk) then you won't lose the last two UDGs.
+Added - RAMDisk commands to the editor. The ROM won't use them yet - they cause error C at the moment.
+
+Fixed - Removed a few OCR errors from the manual, and tidied up the links a bit.
+Fixed - DEF FN lines were getting their last character (usually a ")" character) removed by the tokeniser. (Zdenek Spicka)
+Fixed - The RAMDisk contents would be unavailable after a NEW. Now they are, but not after a reset. (Necros)
+Fixed - PRINT statements starting with a bracket had problems with numeric calculations outside the brackets due to an INPUT bug. (Zdenek Spicka)
+Fixed - Found the remaining two dead links in the help file (barring the uncompleted Assembler documentation).
+Fixed - Removing a selection of lines by highlighting and then deleting would not remove the lines permanently. (Crackfiend)
+Fixed - LOAD ""SCREEN$ didn't display properly (the SCREEN$ wasn't properly highlighted).
+Fixed - 128k Errors were corrupting the RAM Disk when they triggered - SP was being corrupted.
+Fixed - Changed from the 128k ROM to the Plus 2 ROM, as the 128k's error reporting is very broken for RAM Disk errors.
+Fixed - Some errors didn't display properly when notification was turned off.
+Fixed - Part of the new 128k compatibility meant that REM and DEF FN behaved incorrectly.
+Fixed - REM lines were being incorrectly tokenised.
+
+
+Release 12b/c/d Notes: (Credits for bugs found/features requested are in ()s)
+
+Added - A Keywords reference section to the BASin help file.
+
+Fixed - A small bug in the Add Code window was forcing the first line to be added to the end of the last line of your program. (Colin Woodcock)
+Fixed - A rather nasty bug which could append new lines to old ones. Not nice. (Colin Woodcock)
+Fixed - The font folder in the options dialog wasn't being saved.
+Fixed - The syntax helper displayed "X, Y" for the ATTR function, where it should have been "Y, X". (MetalBrain)
+Fixed - Using the Renumber window and then entering a new line deleted the whole program! (Mulder)
+Fixed - Variables of the form <a-z><number><a-z> (such as "t1d") were tokenised as numbers rather than as variables. (MetalBrain)
+Fixed - Strings with the colon (:) character in them were displayed somewhat... wrongly. (MetalBrain)
+
+
+Release 12a Notes: (Credits for bugs found/features requested are in ()s)
+
+Added - The help file (BASin.chm) is now up to date with the current release of BASin, so I've removed the .doc file which now contains less than the HTML help.
+Added - The ability to choose different editor fonts. These are of course Spectrum style fonts, in .bsc or raw binary file format. 768 Bytes makes a font.
+Added - DamienG has kindly supplied a few fonts of his own. Damien has saved them as .SpecCHR, which makes a nice descriptive extension, whilst still maintaining the 768 byte dump format. (DamienG)
+Added - Paul Van Der Laan has donated the Clairsys font, along with a few others of his own devising. (Paul Van Der Laan)
+Added - Syntax highlighting and a raft load of new "features" to the assembler which, thankfully, the user will never see. It will make future expansion easier though.
+Added - Source markers to the BASIC editor. Use the Search->Source Markers menu to use them, or CTRL-SHIFT-Number to set, and CTRL-Number to jump to them. They appear as small green numbers in the gutter of the line they are set on.
+Added - Or rather fixed, a quirk of the 128k editor was that of deleting a line char by char, until there was nothing left. BASin inherited this behaviour, and removing it was a pain in the arse. So the new editor code is very experimental - let me know if there's any problems. It also means that you can delete multiple lines with a select/cut operation. (Arjun Nair)
+Added - The ability to create character sets of up to 256 characters in the UDG editor. Obviously, these won't be used in their entirety by the ROM - but you can use them in machine code programs yourself. Also added the ability to left-click-drag UDGs to copy them to other UDGs, and right-click-drag to exchange them with other UDGs. (DamienG)
+Added - Options in the view menu to show or hide the toolbar and the statusbar.
+
+Fixed - A small bug in the REM FAST directive made the CPU window show up every time an INPUT statement was executed. (Karingal)
+Fixed - Inserting a line in BASIC and then typing RUN would wipe out the subsequent line - I'd have thought it was pretty obscure, but someone spotted that almost immediately :(
+Fixed - The Assembler reported the number of bytes assembled incorrectly on a successful assemble. (BadBeard)
+Fixed - The Assembler reported a successful build even when there were errors in the source which were reported. (BadBeard)
+Fixed - Due to a limitation of the windows messaging system, scrollbars only return 16bit values for their scroll positions, which means bad news for any large files in the assembler.
+Fixed - Toolbar buttons turning white under Windows XP.
+Fixed - Large assembly files (such as Geoff Wearmouth's ROM assembly) were taking far too long to load, and slowed the assembler down to a crawl. Rewrote the editor - BASin's assembler is now suitable for any size files you care to try.
+Fixed - a Bug in the tape streaming code which didn't allow you to load any files from a tape unless you specified the wildcard ("") filename. This was an oversight of the old "filenames can be any length" system used to save files to hard disk.
+Fixed - CPU Display window now correctly disassembles System Variables, RST 08h and RST 28h instructions and their subsequent data bytes.
+Fixed - REM statements with numbers in them had their 5 byte equivalents added in when loading the .bas file. (Geoff Wearmouth)
+Fixed - A small bug in the .bas saving routines meant that any numbers stored in the listing with the value of 13 would make the line they occupied truncated, with a zero-numbered line following them. Not very good, that. (Rockersuke Moroboshi)
+Fixed - The Import Binary window wouldn't close (or update the display if necessary) when you loaded a binary file (BadBeard).
+Fixed - A bug in the tape window meant that saving tape blocks as .bsc or .bsd files would result in a file one byte too big. (DamienG)
+Fixed - A bug in the parser would allow PAPER *7 or INK *7 as valid BASIC when in fact it isn't.
+Fixed - A raft load of bugs in the assembler editor - loading files, mouse operations, saving... they all had problems.
+Fixed - Using apostrophes in comments caused the syntax highlighter to screw up in the assembler editor and the BASIC editor. Should be fixed now.
+Fixed - The JSW Phantom ATTRS bug was caused by a ROM trap firing for the keyboard when it shouldn't - not with interrupts disabled, at any rate :-)
+Fixed - A small inaccuracy in the BIT opcode's behaviour. I though this would fix the JetSetWilly phantom ATTRS bug, but no...
+Fixed - A stupid bug due to an assumption that $E prefixed 5 byte floating point forms would not be in strings that need tokenising - that's what tokenising is for, after all... (BadBeard)
+Fixed - An issue which, although akin to the 128k editor, was not desirable - when a line (or lines) were deleted entirely, they would come back after pressing Enter. This has almost certainly had knock-on effects elsewhere in the editor, and any bugs will be fixed in due course. (Arjun Nair)
+Fixed - A crash that rendered BASin rather "weird" after cancelling a SAVE from the file menu, whilst a program is running. (Fil)
+Fixed - The replace window was searching from the wrong position in the text, and not from the current cursor position.
+Fixed - Entering graphics mode using Alt-Gr (right-alt) under XP would not register keypresses from "C" or "R".
+Fixed - A problem of the Error Report window's Continue function which would interfere with an INKEY$ function. (Fil).
+Fixed - CONTINUE now works again :)
+Fixed - Single stepping from the editor mode (while a program is not running) will start from the last CONTINUE point in the system variables.
+Fixed - A crash in the fonts management when no configuration files had yet been created. (Arjun Nair)
+
+
+Release 12 Notes: (Credits for bugs found/features requested are in ()s)
+
+Added - The Z80 Assembler. Imported from SPIN, the assembly engine is very powerful. The Assembler editor is a custom version of the BASIC editor, suitable for writing small machine code stubs to augment your BASIC programs.
+Added - The CPU display window. This window, found in the debugging set, allows you to single step through machine code programs the same way you do in BASIC.
+Added - A submenu attached to the right-click editor menu, which when you right click on a string, allows you to format that string to 32 character word wrap. PRINT and INPUT allow you to split the string with "'" marks, other strings (such as LET a$="foo") can only be word wrapped using inserted spaces. (Chop983, a.k.a. Simon Holland)
+Added - Line 0 support. This allows you to enter a line numbered zero - acceptable on a real spectrum, but not editable from 48k BASIC. (Andrew Owen, Pgyuri).
+Added - A "Program Information" window which gives some memory usage statistics about your program.
+Added - Code profiling. This will measure the speed that each statement runs at, and generate a report (found in the Debug windows menu) showing which lines took longest. Profiling can be done on direct commands and program lines.
+Added - An option to view the "Spare Memory" between the end of the Calculator Stack and the Machine Stack in the Memory Map window, with a button to clear that memory if you so desire. (Requested by Geoff Wearmouth).
+Added - A Volume control to the sound options page.
+Added - Colour screen dumps via the Printer window's COPY button - the button will give you the option of either the regular "no attrs" screen dump, or a full colour screen dump. Both can be sent to the PC printer.
+Added - Full PC Printer support. BASin can now send the output of the ZXPrinter, the current BASIC listing, or the current Display to your PC's printer.
+Added - Options to save current printer output between sessions, and also to accelerate the printing speed from the ROM routine.
+Added - ZX Printer support via the LPRINT/LLIST/COPY commands, and a window "ZX Printer Output" available from the View menu.
+Added - Correct keyboard port decoding for games that employ a machine code routine to read the keyboard from an IN instruction. Unfortunately, this means that a spectrum keyboard simulation needs to be used - CTRL is symbol shift etc. Normal PC keyboard routines still work in the editor and for any ROM keyboard routine.
+Added - The ability to attach and automatically set the LOAD traps active when a Tape file is attached. You can attach a tape either from the "Attach Tape Image" menu item, or by choosing a tape image in a file requester. (Dave The Lurker)
+Added - Traps in the ROM to stream TZX and TAP data instead of loading from HDD Files. You need to set the traps in the Options (or "Streaming" menu item in the tape creator) and when set, BASin will load or save to your current tape file. All newly SAVEd blocks will be added to the end of the current tape. (Dave The Lurker)
+Added - Completely revamped the Tape Creator. Blocks are listed now with an indication of current tape position (for later!), there are far more tape operations you can do. Tape block properties can be edited in a seperate dialog now too. (Dave The Lurker)
+Added - TZX/TAP importing into the Tape Creator - you can now add in blocks from other tape files. (Dave The Lurker)
+Added - A much needed speed boost to the Memory Map window re-painting, as it was slowing down the emulation when it was open.
+Added - Shading to the Memory Map window. Now each pixel, which represents one byte in RAM, is shaded darker the more bits are set in that byte.
+Added - The Tape Creator tool can now import ID $10 (ROM) blocks from TZXs and TAP files.
+Added - The Memory Viewer now has the ability to write to the memory, so the user can edit the memory directly with this tool. The ROM remains protected, and no edits can be made to addresses < 16384.
+Added - More functionality to the Add Code window - when an error occurs, the pasting will stop and the window will reappear with the remaining lines included. Lets you correct any errors and then resume pasting.
+Added - The line overwrite protection can now be set to only warn you when you enter a new line that will overwrite an older one, instead of warning when you edit a line.
+Added - Colour token keys. Use graphics mode, and F1-F8 (Blue to Black) for ink, Shift+F1-F8 for Paper. In regular non-graphics mode, you can use Shift and F3/F4 for Inverse/True Video, Shift and F5/F6 for Bright on/off, and Shift and F7/F8 for Flash on/off.
+Added - Drag and drop support for snapshot files (.sna, .z80).
+Added - Extra buttons for adding/deleting/modifying watches and breakpoints in their respective windows.
+Added - Extra functionality to the Memory viewer window. You can now specify addresses, find text, jump to addresses pointed to by System variables, and find program lines using the "Line:Statement" construct, ie "10:2".
+
+Fixed - The current directory wasn't saved with the previous session when BASin exits, which caused "File not found" errors if your program tried to load from a relative path after being restored from the "previous session" entry.
+Fixed - Sending lines from the Command history to an empty line in the editor could crash under certain circumstances.
+Fixed - Some issues with code selection not updating, and places where the cursor would vanish periodically. Also fixed some breakpoint issues that weren't likely to arise... But you never know.
+Fixed - Syntax helper not updating when the cursor moves off the current line in a vertical direction - it seems to have been one line "behind".
+Fixed - Some windows, such as the Tape Creator, should be closed on exit or they just get shoved to the back when you next start BASin.
+Fixed - The renumber routine had problems with certain lines when renumbering a range.
+Fixed - A bug in the previous bugfix which used a Floor() function where it should have used a Round() function.
+Fixed - A bug in floating point conversion meant that very long recurring numbers of very, very small numbers were incorrectly represented in 5 byte form. (Geoff Wearmouth).
+Fixed - Moving the cursor right, off the end of a Direct Command line will not cause that line to execute. (Tayanc Molla).
+Fixed - A very small problem where if a keyword (such as PRINT) is followed immediately by a quote (") mark, then it will be rendered using syntax highlighting for a non-declared variable rather than for a keyword.
+Fixed - The tape window was displaying Character and Number arrays Variable names incorrectly.
+Fixed - Two extra bytes were added to converted tape blocks, which caused unloadable files to be added to TZXs.
+Fixed - Some small issues with some windows opening non-modally, which allowed the user to screw stuff up. (Paul E Collins).
+Fixed - Made the drop-down list in the System Variables window non-editable. (Paul E Collins).
+Fixed - Disallowed the user to edit variables whilst programs are running - this had the potential for disastrous consequences. Editing while "paused" is fine. (Paul E Collins).
+Fixed - Illegal USR Expressions in various places now come up with an error message if they overwrite their own expressions, such as a USR 0 would. (Paul E Collins).
+Fixed - FOR Vars couldn't be edited if you first edited an Array variable (Paul E Collins).
+Fixed - That nasty, nasty man Mr Collins did some nasty, nasty things to Direct Commands and the Command History window, and as a result we've got a more stable system there.
+Fixed - Some expressions (such as USR 1300) can take forever to complete, and logging these expressions in REM statements caused lockups. Introduced a timeout to circumvent this.
+Fixed - Gave the Binary Import window a little more security when loading in arbitrary files - they no longer crash BASin if they don't contain any BASIC code.
+Fixed - Multiple entries on the drop-down list in the Memory Viewer, caused by not clearing the list before it's updated. (Paul E Collins).
+Fixed - Pasting in multiple lines of the same line number would cause a crash of BASin. Now they just warn you as any other line-overwrite operation would. (Paul E Collins).
+Fixed - Pasting in multiple direct commands would crash the emulator - now they're all executed as a batch. (Paul E Collins).
+Fixed - Added the comma to Error messages as in "0 Ok, 10:1". (Paul E Collins).
+Fixed - Well, not really a bug. In some cases, a keyword followed by a number was declared as a variable. Eg: FOR F=1TO2, where the TO2 should really have been "TO 2". (Paul E Collins).
+Fixed - The utility windows which contain edit fields wouldn't respond to keyboard shortcuts such as ctrl-v for paste. The main editor window would catch them instead. (Paul E Collins).
+Fixed - Home and End would cause a direct command to execute rather than move the cursor. (Paul E Collins).
+Fixed - Weird errors when the user executes PRINT USR 8 now show as "? Unknown Error 10:0" or somesuch, rather than producing either a badly sized error dialog or a potentially dangerous corrupted error.
+Fixed - GO TO Error and Find Line had a small bug which threw an exception when no line numbers existed, but some code has been typed in the editor.
+Fixed - a small but significant bug in the "Trace Execution" system that could potentially crash BASin.
+Fixed - Long evaluations (or in the case of USR 1300, ones that take forever) no longer corrupt the emulation. (Paul E Collins).
+Fixed - The Brackets method "Auto Completion" did not take the parameters of DEF FN statements into account (though FN was fine). Now BASin will insert the closing bracket before the "=" in a DEF FN statement. (Paul E Collins).
+Fixed - Lines entered into a .bas file using a text editor could be "doubled up" by adding a "\" to a line with a proper numbered line following it. (Paul E Collins).
+Fixed - The mysterious disappearing cursor! Well, the editor window just didn't scroll far enough...
+Fixed - the Parser would allow DIM to be used with a numeric variable whose name is more than one letter. (Lee Tonks)
+Fixed - The Renumber tool when used as a block renumber could produce duplicate lines. (lee Tonks)
+Fixed - In some circumstances, BASin would not enable the "Go to Error" option in the Search menu.
+Fixed - An exception warning about disabled or invisible windows which got thrown when requesting a Watch's properties.
+Fixed - Lines that are overwritten using the overwrite protection could end up nowhere near the original line.
+Fixed - Windows that were opened before the editor opened at startup remained blank while the editor starts up - sorted now.
+Fixed - A major speed up in the line storing method, which was getting too slow on large programs.
+Fixed - INPUT allows a bracketed (but not nestable) sequence of PRINT items for constructing evaluated prompts, and BASin's parser didn't allow for this (Geoff Wearmouth).
+Fixed - Embedded Colour codes followed by non-alphanumeric characters would group together and corrupt the sequence of characters (Allen Doe).
+
+
+Release 11a Notes: (Credits for bugs found/features requested are in ()s)
+
+Added - Geoff Wearmouth's changes to the BASIC manual (Paul E Collins).
+Added - made the line overwrite protection optional. This also applies to the Add Code window for pasting multiple lines.
+
+Fixed - Embedded Colour codes followed by non-alphanumeric characters would group together and corrupt the sequence of characters (Allen Doe).
+Fixed - The Add Code window didn't overwrite existing lines properly (Allen Doe).
+Fixed - Using the cursors (up/down) to exit a line that will overwrite another line caused weird numbers to appear at the cursor position if you've got line overwrite protection turned on (Allen Doe).
+Fixed - removed the ability to concatenate lines with the DEL or BACKSPACE keys - you just can't seperate them again in an editor of this style.
+Fixed - a small problem with lines getting concatenated if a line overwrite occurred.
+
+
+Release 11 Notes: (Credits for bugs found/features requested are in ()s)
+
+Added - Very basic help on BASin, and the entire 48k Spectrum Manual as a help file. You can get help by right clicking a command and choosing "Token Help", or by using the Help menu. A *massive* debt of gratitude goes out to Paul E Collins for his fantastic work on the help file.
+Added - A Tokenise/Detokenise option on the right click context menu. You can now insert or remove tokenised keywords from strings. ie, if you type "COPY" into a string, you can tokenise it to $FF (with a small graphical representation) now.
+Added - Drag and Drop support for BASIC files (.bas), CODE files (.bsc) and SCREEN$ files (.scr).
+Added - Following on from the context menu, BASin now support variable inspector tooltips. Hover your mouse over your variable name and as long as it's been declared in memory, a tooltip will appear containing a description of the variable, and it's contents.
+Added - A right-click context menu for the editor, which you can use (or will be able to use) to get help on commands, and edit variables by just clicking them.
+Added - Proper hints to the toolbar buttons. It was about time I did, really... (Requested by Paul E Collins)
+Added - Multi-Line code merging (using for example the Paste system or the UDG Editor's Send As BASIC option) now has a small warning when a line is to be overwritten.
+Added - Line overwrite protection. Now if a line is going to be overwritten, you get a green error cursor at start of the line. Pressing Enter again will have the line accepted. (Requested by Dave Mills)
+Added - Upgraded the Renumber tool to do ranged renumbers now - you can specify a portion of the program to renumber instead of the whole thing. Beware of renumbering and overwriting existsing lines outside the renumber range! BASin will alert you if that happens. (Requested by Geoff Wearmouth)
+Added - Block Delete. You can now delete a single line by typing it's number, ie, 10<return> and multiple lines using 10,20,30,40<return> or by using 10..40. you can mix these ie: 10,20,30..60,100 (Requested by Geoff Wearmouth)
+Added - The Editor will now display string literals using the characters pointed to by CHARS - so you can see what your new chars will look like. Also updated the Token Window with a checkbox you can select to display the current charset in the alphanumerics box.
+Added - Editor speed-ups - should about 2x faster than it was before.
+Added - Editor keystroke sounds. You can turn them on or off in the Sound options page, and choose between a 48k style keyclick and a 128k style. The "line OK" and "Error" beeps from the 128k will sound regardless of 48k/128k type.
+Added - Insert/Overwrite mode for the editor, with a Statusbar indicator.
+Added - Imported the 2xSAI and SuperEagle display scalers from the upcoming release of SPIN.
+Added - Updated the Scale2x routines to assembly language for a vast increase in speed.
+Added - Frame Skipping. BASin can now be configured to skip any number of frames, and can auto-skip if necessary to keep sound emulation smooth. This means that rendering styles like scale2x and Bilinear can be used in a maximised display window.
+Added - Saving a program now adds the filename to the MRU list on the file menu.
+Added - Error help box - allows the user to get information about a particular error, without having to actually cause it first. (Paul E Collins requested).
+Added - an extension to the Autobrackets method - you can now have it complete bracket pairs when you enter a line or use a : seperator rather than have them autotyped. (Paul E Collins)
+Added - Predictive Auto-Typing :) It will predict what you want to type (from a selection of Keywords, Functions and Variables) - either carry on typing or hit the right arrow (or the END key, or the "." key) to accept it.
+Added - Sound! Beeper/Port $FE Sampling only atm. (Everyone seemed to want this).
+Added - the GOSUB stack window. Minimal functionality at the moment.
+Added - Syntax Highlighting in the editor - you can turn it on/off and configure it from the first options page.
+Added - the facility to trace (follow) program execution at runtime (Run Menu, Badbeard wanted this).
+Added - the "Character Ruler" which will help with creating long strings which need to wrap around the screen. A green bar will show where you are in the string, and every 32 characters a red marker will appear on the ruler.
+Added - a simple calculator to the editor - like the old 128k. Just type a numeric or string expression at the editor, and it will be evaluated and sent as a direct command rather than tokenised and stored as a program line. Beware - a single number (such as "2") will be accepted as a blank line number, and as such will still delete the corresponding line from memory if it exists!
+
+Fixed - BASin's Parser will now allow empty string slicers - A$() - as it *is* valid (but not particularly useful) syntax.
+Fixed - A small oversight in the parser that caused the syntax helper to display syntax for TAB when you typed AT, and ABS when you type TAB.
+Fixed - Illegal characters in filenames are now rejected, if used in a SAVE or LOAD command. (Paul E Collins).
+Fixed - BASin would silently accept UDGs and Chequerboard characters outside quotes, and then would cause Error C when the program ran. (Paul E Collins).
+Fixed - BASin would not accept 1list:goto1 but would accept 1goto1 - spacing is important, folks. (Paul E Collins).
+Fixed - Sorted the spacing between keywords now, so BASin looks like the original speccy, whereas previously it would insert spaces where there was no need (like RND *10 instead of the correct RND*10).
+Fixed - Using variables with a number followed by an "x" in their names would be cause the number to be converted to a zero.
+Fixed - If BASin starts with Beeper sound disabled, then DirectSound is not initialised. Previously, DirectSound was started no matter what you had selected. However, if you start BASin with Sound enabled, then regardless of your settings it will stay enabled for the remainder of your session, only being disabled when you restart BASin (FuzzBucket).
+Fixed - BASin only allows code pasting when the program is not running, and also now parses the pasted code for errors. If all your code doesn't make it through to the editor, check the log window for a list of lines that failed. (Paul E Collins).
+Fixed - cursoring away from a line containing a predicted keyword or variable will cancel the prediction.
+Fixed - a crash when maximising the editor window in 1024x768 display mode (Arjun Nair)
+Fixed - Modified the syntax highlighter to not include quotes in literal strings when displaying custom character sets, so you can tell where the string starts and stops.
+Fixed - Finally, got the bug in the mouse selection routine fixed which caused selections to appear when you didn't actually want them.
+Fixed - In some instances, unbalanced " (quote) marks in REM statements would cause your entire program to be lost from that point on.
+Fixed - In some instances, the ":" character was not displayed at the end of a line.
+Fixed - Errors that are reported with the Error window rather than the lower screen report no longer clear the lower screen.
+Fixed - Using REM fast would fail if the program subsequently executed a CLEAR command.
+Fixed - BASin's new auto-frame skipper resulted in BASin stealing 99% of your CPU time. Better now!
+Fixed - a few small issues with not scrolling to the current line when entering direct commands.
+Fixed - A problem with renumbering lines that reference line numbers greater than the last line
+Fixed - Added in a new ROM trap that catches POKEs to the FLAGS2 sysvar, and updates your PC's capslock status accordingly.
+Fixed - a "$" character alone as the first character on a line would erase the linenumber. (Paul E Collins)
+Fixed - INKEY$ now returns the correct key-cases for the current capslock state.
+Fixed - Multiline paste into the editor now works (Paul E Collins)
+Fixed - the OR keyword was inheriting a leading space when it didn't need one.
+Fixed - You can now enter variables with numbers in the names without an error C occurring.
+Fixed - Stopped the display window from automatically showing itself after a SAVE command if you've previously closed it.
+Fixed - The "Add Breakpoint" window now uses the position of the cursor when creating a new breakpoint.
+Fixed - Unpredictable cursor behaviour when clicking in the editor at runtime.
+Fixed - Entering a "£" symbol as the first token on a line could crash the editor. (Paul E Collins)
+Fixed - The Syntax helper only took into account the first statement on a line - it now parses and advises based on the statement your cursor currently sits on.
+Fixed - A *very* remote-chance bug that could screw up SAVE commands when running a USR routine that modifies the BASIC memory. (Miodrag Stancevic).
+Fixed - Added VERIFY into the parser, so you can use that command now too... though why you'd want to is beyond me :) (Paul E Collins)
+Fixed - "1 PRINT" was accepted as being a different line to "00001 PRINT" - when they're the same. (Paul E Collins)
+Fixed - When executing a NEW, you can opt to cancel the filerequester and not lose your work. (Paul E Collins)
+Fixed - Syntax highlighting went a tad wrong when you used 10 REM : REM - the second REM was highlighted as a keyword rather than a comment. (Paul E Collins)
+Fixed - Label8 displayed in the token window - now blank. (Paul E Collins)
+Fixed - Any non-tokenised lines present when you quit BASin will be discarded rather than throw an error when you quit. (Paul E Collins)
+Fixed - Minor niggles with the Breakpoints and Watches properties windows - some default values and focus set. (Paul E Collins)
+Fixed - Access Violations on startup if you select Scale2X as your graphics method (Doug Barry)
+Fixed - A pretty perverse case of using DI/HALT to lock up the Evaluator. (Paul E Collins)
+Fixed - If you don't have sufficient permissions to save the settings, or the settings file is in use, BASin would hang on exit. (Paul E Collins)
+Fixed - Lines of the form "10 20 30" were accepted by the editor (Paul E Collins)
+Fixed - Spelling mistakes in the error descriptions (Paul E Collins)
+Fixed - Multiple Colons on a line - you can now enter "10 ::::::" if you really want to. (Paul E Collins)
+Fixed - Lines ending in a single colon were disregarded. (Paul E Collins)
+Fixed - keyclick on entering a command - shouldn't do that, as it's just not right.
+Fixed - Not updating the editor display on line entry if it's a blank line, or just a line number. (Edward Bellew-Dunn)
+Fixed - When the internal tokenised program updates the editor listing, if the number of lines ends up less than the size of the editor can show then the scrollbars would disappear leaving behind some ugly grey bars - ie, the editor image wouldn't resize properly.
+Fixed - Possibly - USR 0 instructions could crash the emulated speccy, and lock up the editor as a result.
+Fixed - Installer not using Start menu user paths (J "News" Smith, CSS)
+Fixed - Installer not uninstalling some files properly - caused by my not taking into account new programs added to Examples.
+Fixed - A z80 core bug (not an emulation accuracy bug) that would cause weirdness timing wise in a HALT instruction.
+Fixed - A bug in the "import binary" window that caused crashes when importing bad BASIC code. (J "News" Smith, CSS)
+Fixed - Stopped the display window from automatically opening before the editor on startup. Much more professional looking now.
+Fixed - Search/Replace operations now place the cursor correctly.
+Fixed - Search/Replace with multiple searches now work properly.
+Fixed - crashes in the emulation if keys are pressed whilst resetting. (Dave Mills)
+Fixed - commands in newly loaded, but incorrectly syntaxed (ie, IF1 commands) BASIC would be ignored - entering a valid line would erase any changes to other lines. Not a common bug (kind of like symbol table bugs) but it needs fixing for completeness. (Dave Mills)
+Fixed - The syntax highlighting didn't really "work" with embedded colour commands, so I disabled them if you've got the syntax highlighting enabled. No great hardship there, I feel.
+Fixed - The Ruler now ignores non-ascii chars (ie, < 32) and so is the right length to match text in strings now.
+Fixed - The Find window was finding stuff, but not updating the window's scroller to match the find. fixed.
+Fixed - a small issue with cipboard COPY support - escape characters are inserted properly now.
+Fixed - a problem in the Parser with graphics commands not liking some numerical expressions. (BadBeard)
+Fixed - the KLCG cursor display to show the right cursor for the state of the line.
+Fixed - some issues with breakpoints - they relied on old code from the ROM editor and thus expected the line to be already tokenised, instead of just "in development"
+Fixed - a small bug in the editor - if you edit a line's number, it now either overwrites or inserts the new line, and preserves the line that got changed.
+Fixed - a small problem with some horizontal scrollbars being too wide, and "swallowing" the cursor.
+Fixed - Stopped "THEN" and ":" from firing newlines in the editor when used in a REM statement (again)
+Fixed - the "blank" icons found on some Win9x machines.
+Fixed - a small bugette in the .bas saving - any escape (colour) controls at the end of a line were stripped (BadBeard)
+Fixed - a bloody awful bug in STR$ - try PRINT STR$ 2 on an old version of BASin and see... (Michel Skrzypek)
+
+
+Release 10a Notes: (Credits for bugs found/features requested are in ()s)
+
+Added - a small kludge that allows you to set CAPSLOCK on or off using POKE 23658,x - only read at runtime, doesn't affect the editor.
+Added - a font scaler for the editor - allows up to 3x font size. No special filtering yet.
+
+Fixed - a problem where ":" and "THEN" in REM statements caused newlines in the editor.
+Fixed - another one which affected STR$ and FN in DATA Statements. How's that for a convoluted bug? (Geoff Wearmouth)
+Fixed - some text selection issues - some issues with cut/paste may still be around though, we'll see how it goes.
+Fixed - The "restore session" system didn't restore filenames - it does now.
+Fixed - some small bugs regarding breakpoints on the first line of a program and an issue with repainting a breakpoint on the last line.
+Fixed - an issue with multiple blank lines. ie, prevented multiple blank lines from being entered.
+Fixed - various OCR errors for people scanning files into BASin - illegal chars are now ignored (BadBeard)
+Fixed - DEF FN statements - not correctly tokenised (Chris)
+Fixed - a bug in the reset/new sequence - couldn't abort.
+Fixed - a small bug in the renumber tool, which no longer requires you to refresh using LIST or somesuch.
+
+
+Release 10 Notes: (Credits for bugs found/features requested are in ()s)
+
+Added - After a lot of work, the new BASIC Editor is integrated and running. Currently, it replaces the ROM editor with a flexible 128k style editor - there may be an option to use the ROM editor rather than the new Editor in a later release. Thanks to Dave, Woody, Obo, Marko and Monkey for the intensive bug testing.
+Added - Started work on the BASIC Compiler.
+Added - the Options page (tools menu), and enabled all the session saving and such. 
+Added - saving of the MRU list
+Added - a small "Save?" requester to the NEW routine... You never know :)
+Added - corners rounded off, which nobody but me likes.
+Added - Right click (De)tokenisation for the Edit line, with context help on the keyword (MikeW)
+Added - ASM .db support (clipboard only) to the UDG Editor. (Woody)
+Added - escape character functionality to the clipboard paste routine.
+Added - Allowed editing errors to pass the ROM syntax checker whilst pasting a listing in from the clipboard (Simon Owen)
+Added - the ability to extract BASIC from binary files - useful for loading from .dat files saved by the +D. (Simon Owen).
+Added - Just for a laugh, implemented the Scale2x (find it on sourceforge) algorithm. And it *is* a laugh :)
+Added - the Edit->Copy Listing menu option - now copies the entire program to the clipboard for pasting into the editor of your choice (Monkey).
+Added - .z80 Saving (version 1.45 z80 files for now).
+Added - support for ripping BASIC/UDGs from 128k snapshots
+Added - .z80 file loading - all versions load, and the BASIC/UDGs are extracted as for .sna files. 
+Added - FAST and SLOW directives - using REM FAST sends BASin into full speed mode, and REM SLOW jumps back to regular speccy speed - useful for debugging slow code (Dave The Lurker).
+Added - the Renumber tool - now you can rework your line numbers just like 128k BASIC did. 
+Added - highlighting to various areas of interest in the memory map.
+Added - Shift buttons to the UDG editor (Mike Wynne).
+
+Fixed - a problem with PAUSE and BREAK functions. (BadBeard)
+Fixed - a small bug in the parser which would disallow GOTO10 as valid syntax.
+Fixed - a small bug which didn't allow you to save or grab an arbitrary number of UDGs/Chars from memory into the UDG Editor (Dave The Lurker).
+Fixed - a small bug in the token window, and added a display of the currently highlighted token's ascii value.
+Fixed - another bug in the number system - now numbers can start with a ".", as in ".5"
+Fixed - a bug loading programs that contained numeric arrays, which in turn contained negative values.
+fixed - a bug in the .z80 compressed block savers, so now all versions can be saved (Woody).
+fixed - a bug in embedded ascii codes - sequential codes were skipped.
+Fixed - a bug in embedded colour codes - they were being saved as #000 chars, not the \{iXpX} form.
+Fixed - up all the numeric edit boxes - they can all have speccy basic expressions entered now.
+Fixed - Removed the random screen-noise when NEW entered (Geoff Wearmouth).
+
+
+Release 9 Notes: (Credits for bugs found/features requested are in ()s)
+
+Added - a Run-Status indicator - whilst running, the cursor graphic in the lower corner turns green. When stopped (due to a pause or breakpoint) it turns red. (Monkey)
+Added - prompts to save any changes to your curent project when you quit BASin.
+Added - window menu options to resize to 100% and 200% size, and also to force the aspect ratio for windows that have gotten squashed or squeezed. (Monkey)
+Added - the UDG Editor! This is a simple 8x8 char editor, but works well. Outputs to saved code blocks, and directly to the editor too.
+Added - correct keyboard ascii handling - non-UK keyboards reproduce the correct characters. Previously, Shift-2 would produce a " character, even on US keyboards which would produce an @ symbol. (Bethany Carlton)
+Added - the ability to read the copyright symbol (© - Alt-0169, if you can't see it) from .bas files (suggested by Bethany Carlton).
+
+Fixed - a bug in the line tokeniser that added a surreptitious Chr(0) to the end of a REM line with no actual comments attached (Geoff Wearmouth).
+Fixed - a *nasty* little bug in the "©" (copyright symbol) routines that stopped any program with the keyword POINT in it from loading properly.
+Fixed - a large-ish bug with long lines - any line longer than a screenful will crash BASin. (Monkey/Mike Wynne).
+Fixed - a problem with a vanishing edit box in the Goto/Run To dialogs (Mike Wynne)
+Fixed - a bug in the Find... window (which did not find from the start of BASIC memory) (Mike Wynne)
+Fixed - Set the default Breakpoint statement to statement 1. (Mike Wynne)
+Fixed - Set the Debug Windows items to have a small checkmark by them when that window is already open. (Monkey)
+Fixed - a bug in the evaluation window that blanked the edit line after an evaluation. (Mike Wynne)
+Fixed - Removed the software filtering - and the display may look a bit worse when resizing the window. If anyone wants it back in, email me :-)
+Fixed - a small bug which allowed the Memory editor to crash the app when it's resized. (Mike Wynne)
+Fixed - the selection offsets, any selection now includes the character that the cursor is currently "on", so when you press delete, that character is deleted as well as any selected characters. (Thanks to Bethany Carlton for pointing that one out).
+Fixed - a small bug in the selection code - no more totally black lines... :-)
+Fixed - an Annoying bug in the token window, which prevented the UDGs from working properly.
+
+
+Release 8 Notes:
+
+Added - Finished the Token entry window.
+Added - SAVE/LOAD Data (variable arrays). It's not *too* useful, but the original speccy did it, so BASin should too.
+Added - SAVE "" <CODE/LINE> etc functionality - now you can save "" and choose a filename for your code block or .bas file from a requester.
+Added - Now the Tape creator works. You can build tape images for use in spectrum emulators - which is what Dave wanted most from BASin, for the CSSCGC :)
+
+Fixed - a rather embarrassing bug that the Token Window threw up - colour codes couldn't be entered into the editor.
+
+
+Release 7 Notes:
+
+Added - Note the changes to the pgup/pgdn keys - they now move you up and down through the program. This frees up the shift-up/down combos for selecting an entire line.
+Added - more enhancements to the edit line clipboard support - now you can use proper text selection (keyboard only atm).
+Added - a multiline paste utility - if a single line is pasted to the edit line, it works like the regular paste facility. If more than one line is pasted (such as a complete program) then it is all entered with cariage returns intact. This has quite a nice effect :-)
+Added - an autosave session - now you can quit basin and return later from where you left off.
+Added - a new cursor system, ready for true selection/cut/copy/paste - a transparent cursor. Mucho thanks to Marko for pointing out to me where I went wrong with that one!
+Added - AUTOLINE line numbering. Type your lines in with a . instead of a line number, and an intelligent routine will convert the . into a sensible line number, based on where the ">" program cursor is in the listing. You can thank Dave from #speccy for that idea.
+Added - the ability to select the graphics mode key - NT/2k/XP with an English keymap can use Alt-Gr as the graphics mode modifier - holding it down and typing produces UDGs and Numeric graphical chars. On systems running Win9x or any non-Uk/French keymap, the Alt-Gr key is unavailable. To this end, the option is now available (via the rather simple .ini file atm) to use scroll lock or numlock for graphics mode. This is a toggle key, rather than a modifier - press once to enter graphics mode, press again to leave.
+
+Fixed - a bug in the Delete system - now works properly on long lines.
+Fixed - Speeded up (properly, this time :-p) the EDIT line display.
+Fixed - several bugs in the RunTime BASIC window - as a result, GOTO works for individual statements properly now.
+Fixed - Error message box behaves slightly differently - clicking OK takes you to the edit line rather than the listing, thus preserving the majority of the screen, rather than performing an autolist.
+Fixed - Moved the main emulation over to normal spectrum speed - your programs will run at the expected speed now. The editor, however, still runs swiftly. Should also prevent BASin from taking 99% of your CPU time :)
+Fixed - a bug in the find window where a search could complete and bring up line zero.
+Fixed - a disabled menu item - find again.
+Fixed - Changed the "Next Line" function to "Step Over" - a better way of doing things. BASin needed a StepOver, and NextLine can be performed by using the Run To button.
+
+
+Release 6 Notes:
+
+Added - the Replace functions.
+Added - a LOAD "" menu option and the recently loaded files list.
+Added - Error Message boxes - 0 Ok, D BREAK, 2 Variable not found etc all appear in a message box with a short description of each error, and options to return to the program editor or execute a CONTINUE. 
+Added - Cut/Copy/Paste/Delete to the Edit menu.
+Added - a Search window - you can search listings for text, and optionally send the found text to the editor line, or just set the ">" program cursor to point to the line that the text occurs on. Replace functions may be next.
+Added - in the GOTO line numnber and GOTO Error options - a quick way of bringing a specific line into the edit area, and if an error occurs at runtime, you can jump straight to (and edit) the statement that caused it.
+Added - Undo and the Forced BREAK options. Undo will undo the last command you typed, be it a direct command or a program code change. The Force BEAK is similar, but available only at runtime - it will take you back to just before you ran the program. In the case of a loaded program with autostart, it will take you to the point that the program loaded, but will set the autostart to off, so that the program won't start. This is useful if a program uses z80 asm, and locks up on startup - there's *nothing* that can prevent you from getting out.
+Added - the Command line History window. Allows you to browse your efforts so far.
+Added - the command line history - use the pgup/pgdn keys to recall lines previously entered (up to the last 128 of them).
+Added - a simple memory viewer - readonly atm, but will eventually expand to become a full hex editor.
+Added - System variables viewer/editor
+Added - watch types - you can now watch sysvars, variables (faster than an expression) and memory location bytes, words and DWords.
+Added - Enabled the Menu Items "single step" and "next line" in the main window's menu
+Added - the Variables editor. I did say "eventually" in the last release :) 
+
+Fixed - Updated the behaviour of the PAUSE command - it can now be BREAK'd prematurely, but not ended prematurely. This is purely for convenience. Eventually, when the speed of the interpretation is set to true spectrum speed this will not be needed, and the PAUSE command will behave as normal.
+Fixed - the Undo system to undo at appropriate points, and to take into account the replace operations.
+Fixed - Altered the behaviour of the RunTimeWindow slightly - it no longer tracks the program as it runs, as that was just too CPU intensive and slowed the whole windows message queue down. It still works fine for single step mode, and also to track the editor cursor.
+Fixed - tonnes of small but annoying bugs with the syntax helper not showing the appropriate help.
+Fixed - Changed the GRAPHICS mode toggle key to the RIGHT-ALT key - which frees up the control key for... Menu shortcuts! Now it uses similar shortcuts to delphi :)
+Fixed - a small bug that brought the main window into input focus when any expression was evaluated. 
+Fixed - the windows code so that windows can't open off-screen, and are moved back into view accordingly.
+Fixed - window size and control position bugs (Delphi 5 doesn't like XP).
+Fixed - bugs that didn't let you cancel the GOTO and RUNTO menu items in the main window.
+Fixed - the accuracy in certain floating-point operations (such as 0.5 being calculated as 0.499999999999) 
+
+
+Release 5 Notes:
+
+Added - a readonly variables window - this will eventually allow you to edit your variables. Just lets you look at them for now...
+Added - Watches - these will evaluate an expression at each statement, and if the user so desires, can halt execution if the expression evaluates to non-zero (ie, A=1 could be used as an expression).
+Added - the Log window - and enabled breakpoints to produce a log entry rather than stop program execution. The log entry can be either a literal strig or an expression evaluated when the breakpoint fires.
+Added - Conditional breakpoints and the Breakpoints editor.
+Added - the RUN Menu's commands Run/Step/Next Line/GO TO/RUN TO etc. Not as useful as the Runtime BASIC window's versions - these operate on lines only, with the exception of single step. 
+Added - an expression evaluator - guaranteed to arrive at the same answer a spectrum will... with an added bonus that it's a few decimal places more accurate. Supports all Spectrum functions, including such things as screen$ and attr(), and variables are usable too.
+
+Fixed - rather glaring error in the byte order of 5byte small integers.
+Fixed - bugs in loading .bas files containing tab marks, and a small bug where a "-" sign appears before a bracket. Also, sorted the GOTO button in the runtime BASIC window - it didn't run programs from statement 1 (inital statement) properly, only from subsequent statements.
+Fixed - spelling typos in the parser - seperator is now separator :)
+
+
+Release 4 Notes:
+
+Added - the first two of the BASIC helpers. The first, the syntax helper, is available from the VIEW menu. The second, the BASIC runtime window is a debug window, available also from the VIEW window. It *should* update as your program changes. Beware that cheating such as poking a new program may well alter the behaviour. you have been warned. You can now pause and single step/control the flow of a program while it runs. 
+Added - The Z80 Core has been almost totally rewritten in x86. Expect bugs.
+Added - Del has been set up to work properly as opposed to backspace.
+Added - the Syntax Helper bar - checks what you type, as you type it, and informs you of what errors you may have made, and what syntax each function or keyword expects.
+
+Fixed - Breakpoints can be set by double clicking a statement or line.
+Fixed - Altered the keyboard a bit - now a lot less finicky about Break (as it's on ESC now) and Graphics mode is better on CTRL. Take note of the changes to the F-Keys though, with regard to embedded colour controls.
+Fixed - It's now a proper Delphi project (rather than a compiled .dpr) in order that the BASIC editors can be started on. 
+Fixed - the reset sequence - runs at proper spectrum speed, and no longer corrupts P_RAMT.
+Fixed - DEF FN can be saved to .bas and reloaded properly now.
+
+
+Release 3 Notes: (Internal release)
+
+Added - Name changed to BASin - better than SPINlite :)
+Added - Snapshot loading. Use LOAD "<snapshotname>" to do it. LOAD "" opens a file requester.
+Added - A Windows border (yuck for now) and some more bug fixes.
+Added - .bas loading and saving. Fully zmakebas compatible.
+Added - ROM Protection and an enormous speedup.
+
+
+Release 2 notes:
+
+Added - Win API stuff added for later LOAD/SAVE trapping
+Added - Core optimised to use effective addressing on the Registers structure
+Added - Faster display upate code - now runs at ~100% spectrum speed on a 486 DX/2-50mhz
+
+Fixed - Small bug in DEF FN fixed
+Fixed - bugs in the core fixed
+Fixed - responds to windows messages correctly now. Alt-F4 and all that jazz.
+
+Release 1 Notes
+
+Internal release - move along, almost literally nothing to see here, unless you love looking at the (C) message.

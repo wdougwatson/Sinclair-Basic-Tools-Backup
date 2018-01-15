@@ -1,0 +1,126 @@
+// RUNTIME VARIABLES SAVED WITH BASIC //
+
+To specify a variable saved with the BASIC at runtime, there is the "var" command, which will take this format:
+
+Var [v]:[Type] = [Value]
+
+Where v is the variable name (a$, a etc). Type would be one of Num, Str,
+NumArray(), StrArray(), NumFOR.
+
+Strings would be Quote (") delimited, with normal BASIC quote-in-quote rules
+applied.
+
+Arrays would be declared as they were in the BASIC - as NumArray(3, 3) etc.
+The elements would be stored as 1,1, 1,2, 1,3, 2,1, 2,2, ... 3,3 etc, the
+same as they are in the VARS memory space. Again, String arrays will be as
+"1","1", "1","2", "1","3" etc.
+
+FOR variables need their own case as they are not simple numerics. These
+take the form:
+
+NumFOR v = Current, Limit, Step, Loopline, LoopStatement
+
+All this has the advantage that the var declaration would not be inserted
+into a program - it isn't a line number, and it's not a label, as it doesn't
+start with @. It also maintains what I feel is the entire point of .bas
+files - human readability. It would be quite a simple task to just grab the
+VARS memory space, and use something like
+
+Var [some long hex string] -
+
+a simple dump of the memory. But the user will
+not likely understand it, and almost certainly won't be able to declare
+runtime variables themselves.
+
+// EMBEDDED COLOURS //
+
+PRINT "hello \{i6p1}Russell!"
+
+where i specifies ink, and p specifies paper. Also {b1} would be BRIGHT on,
+{f1} would be FLASH on. You can specify multiple colour controls in one
+block, which would be later expanded to their sinclair charset equivalents
+at "compile" time. Similarly, saving to .bas from BASin will be simple - I
+can just grab colour codes and build a {} block so long as there are
+consecutive codes.
+
+// AUTOSTART WITH THE "LINE" PARAMETER //
+
+Auto <label/line num> alone on a line, which tells the program to set the
+Autostart word of the header appropriately.
+
+// EMBEDDED ASCII CODES //
+
+A few people liked to include chars inside the listing (such as colour
+controls, which we're dealing with) and also others < 0x20 (or even forcing
+the .bas to include a specific token) - so it may be useful to use the \#
+escape code for those, ie:
+
+\#xxx or \#0x$$ - the only stipulation being that the xxx form must be three
+chars, and the hex form uses two chars after the "0x".
+
+// NUMBER FORMATS //
+
+You can specify numbers as plain decimal, 0x/$ hex codes, and BIN 01010/%10101
+binary format.
+
+// OTHER .BAS FORMAT ESCAPE CODES //
+
+UDG graphics are specified using the sequence \<alpha> where alpha is the UDG letter.
+ie, \a will give UDG A.
+
+Block chars are as follows, represented (to some extent) graphically:
+
+the : is both the top and bottom quads of that halfslice filled. The ' is the top, 
+the . is the bottom. The <space> is none.
+
+\         
+\ ' 
+\'  
+\'' 
+\ . 
+\ : 
+\'. 
+\': 
+\.  
+\.' 
+\:  
+\:' 
+\.. 
+\.: 
+\:. 
+\::
+
+Colours are described above. There are a few other chars:
+
+\#<number> is a token. Must be 0..255. \* is the copyright symbol, and for some reason,
+\` is the pound sign (£) which can be entered as you would normally.
+\@ is the @ symbol, as this has been hijacked by the label system.
+finally, \\ gives a single \ char.
+
+// BASIC LINES AND LABELS
+
+BASIC lines can be entered as plain text, using the escape codes listed above. They can be split and reassembled later using the \ char:
+
+10 PRINT AT 1,1;"Hello There";\
+	        " Mother"
+
+will be seen by BASin as all one line, without the \ at the end of the first line:
+
+10 PRINT AT 1,1;"Hello There";" Mother"
+
+Beware that you should not split quoted text that way - any whitespace at the start of subsequent lines is ignored. 
+
+Line numbers are optional - they will be inserted by BASin. Use the @ symbol to denote a label:
+
+@Start
+	Print ink rnd*7;"hello"
+	Go to @start
+
+will "compile" as
+
+10 PRINT INK RND*7;"hello"
+20 GO TO 10
+
+and that's about it!
+
+D.

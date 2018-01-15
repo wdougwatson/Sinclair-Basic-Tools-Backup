@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)http://everychildcancode.com/lesson-1/ -->
+<html lang="en-US" prefix="og: http://ogp.me/ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3 - Every Child Can CodeEvery Child Can Code</title>
+    <!-- Favicon -->
+    <link rel="icon" href="./Lesson_files/favicon.png" type="image/x-icon"> 
+    <!-- Bootstrap core CSS -->
+    <link href="./Lesson_files/bootstrap.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="./Lesson_files/style.css" rel="stylesheet">
+  	<link href="./Lesson_files/css" rel="stylesheet" type="text/css">
+</head>
+<body class="single single-post postid-55 single-format-standard logged-in">
+
+    <header role="banner">
+        <nav role="navigation" class="navbar" id="topnav">
+            <div class="navbar-header">
+              	<a class="navbar-brand none" href="http://everychildcancode.com/" title="Every Child Can Code">
+    				<div class="branding">
+    					<h1 class="tagline">Every Child Can Code</h1>
+    				</div>
+    			</a>			
+             </div>
+        </nav>
+    </header>
+    
+  
+
+	
+			
+<div class="container">		
+	<div class="row singles">
+	
+		<div class="col-md-12 single-in">
+		
+						
+<div id="sub-menu">
+<ul id="menu-lessons" class="nav nav-pills">
+<li class="menu-item"><a title="Lesson 1" href="Lesson1.html">Lesson 1</a></li>
+<li class="menu-item"><a title="Lesson 2" href="Lesson2.html">Lesson 2</a></li>
+<li class="menu-item active"><a title="Lesson 3" href="Lesson3.html">Lesson 3</a></li>
+<li class="menu-item"><a title="Lesson 4" href="Lesson4.html">Lesson 4</a></li>
+<li class="menu-item"><a title="Lesson 5" href="Lesson5.html">Lesson 5</a></li>
+<li class="menu-item"><a title="Lesson 6" href="Lesson6.html">Lesson 6</a></li>
+<li class="menu-item"><a title="Lesson 7" href="Lesson7.html">Lesson 7</a></li>
+<li class="menu-item"><a title="Lesson 8" href="Lesson8.html">Lesson 8</a></li>
+<li class="menu-item"><a title="Lesson 9" href="Lesson9.html">Lesson 9</a></li>
+<li class="menu-item"><a title="Lesson 10" href="Lesson10.html">Lesson 10</a></li>
+</ul>		            
+</div>
+                				
+				
+				<div class="sing-tit-cont">
+					<h3 class="sing-tit">Lesson 3</h3>
+									</div>
+				<div class="container main">
+
+					<div class="row">
+						<div class="sing-cont col-md-9">
+							
+							<div class="sing-spacer">
+							
+								<h2 style="text-align: center;"><strong>FOR, TO, NEXT, STEP, LET</strong></h2>
+<p>The first four codewords in this lesson allow you to tell the computer to do something again and again. We call this making a “loop”, because the computer’s actions go around and around a loop of codewords, however many times you tell it to do so.</p>
+<p>All of the codewords in this lesson are statements/commands.</p>
+<p>&nbsp;</p>
+<p><strong>FOR and TO </strong>You should learn about the FOR codeword and the TO codeword together, because FOR is always used together with TO. And these two codewords are normally used together with NEXT. Here is an example:<br>
+<code><strong>60 FOR c = 1 TO 8 : BORDER c</strong></code></p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>and NEXT</strong>&nbsp;&nbsp;&nbsp;&nbsp; <code><strong>70&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NEXT c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></code></p>
+<p>&nbsp;</p>
+<p>Line 60 means that the computer must first make the border on the screen blue, which is colour 1, as we know from the INK codeword.</p>
+<p>Line 70 tells the computer to increase c to its next number, which is 2, and this means that the colour of the border will change to colour 2, which is red.</p>
+<p>And the computer goes around and around this loop, increasing c by 1 each time and changing the colour of the border whenever c changes. When c becomes 8 and the colour of the border changes to colour 8, which is transparent, the computer has finished going around the loop.</p>
+<p>&nbsp;</p>
+<p><strong>STEP</strong>&nbsp;In the example we have just seen the colour number, which we have called “c” in these two lines of the program,&nbsp; gets bigger by 1 every time the computer goes around the loop from line 60 to line 70 and then back around again. But sometimes you might want the increase to be more than 1. We call the size of the increase a STEP, and we tell the computer this size by using the STEP codeword.</p>
+<p>&nbsp;</p>
+<p>For example:<br>
+<code><strong>60 FOR c = 1 TO 8 STEP 2</strong><br>
+<strong>70 NEXT c</strong></code><br>
+The first time the program uses the size of c (we call this size the “value” of c) it is 1. Then after going around the loop once the value of c increases by a step of 2, so it becomes 3 (because 1 + 2 = 3). Then the next time it goes around the loop the value of c becomes 5, then it becomes 7, but then it cannot increase any more because another step of 2 would make it 9, which is too big for c because in line 60 of the program c can only increase up to 8. So when c is 7 the program stops going around the loop.</p>
+<p>&nbsp;</p>
+<p><strong>&nbsp;</strong><strong>LET </strong>The LET codeword is one of the most useful codewords in BASIC. It tells the computer to give something a certain value. For example, the program line<br>
+<code><strong>60 LET x = 3</strong></code><br>
+<strong>&nbsp;</strong></p>
+<p>gives the variable called x the value 3.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3><strong><u>Using LET to do arithmetic</u></strong></h3>
+<blockquote><p>You can use the LET command to tell the computer to do arithmetic in your program. Here are some&nbsp; examples:</p></blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h4><em><u>How to add a number to a variable</u></em></h4>
+<p><code><strong>10 LET a = a + 5</strong><br>
+<strong>11 REM Line 10 adds 5 to the value of the variable a</strong>.</code><br>
+<strong>&nbsp;</strong></p>
+<h4><em><u>How to add two or more variables together</u></em></h4>
+<p><code><strong>15 LET a = 10 : LET b = 20 : LET c = a + b</strong><br>
+<strong>16 REM Line 15 adds the value of a, which is 10, </strong><br>
+<strong>17 REM to the value of b, which is 20.</strong><br>
+<strong>18 REM The result is 30 which is now the value of c.</strong></code></p>
+<p><strong>&nbsp;</strong></p>
+<h4><em><u>How to subtract a number from a variable</u></em></h4>
+<p><code><strong>20 LET d = d – 8</strong><br>
+<strong>21 REM&nbsp; Line 20 subtracts 8 from the value of d.</strong></code></p>
+<p><strong>&nbsp;</strong></p>
+<h4><strong>&nbsp;</strong><em><u>How to subtract one value from another</u></em></h4>
+<p><code><strong>25 LET a = 64 : LET b = 10&nbsp; :&nbsp; LET c = a – b</strong><br>
+<strong>26 REM Line 25 subtracts the value of b, which is 19,</strong><br>
+<strong>27 REM from the value of a, which is 64.</strong><br>
+<strong>28 REM The result is 45 which is now the value of c.</strong></code></p>
+<p>&nbsp;</p>
+<h4><em><u>How to multiply a variable by a number</u></em></h4>
+<p><code><strong>29 LET f = f * 5</strong><br>
+<strong>30 REM In BASIC we use * as the “multiply” symbol.</strong><br>
+<strong>31 REM Line 29 multiplies the value of f by 5.</strong></code></p>
+<p><strong>&nbsp;</strong><strong>&nbsp;</strong></p>
+<h4><em><u>How to multiply variables together</u></em></h4>
+<p><code><strong>35 LET a = 7 :&nbsp; LET b = 4&nbsp; :&nbsp; LET c = a * b</strong><br>
+<strong>36 REM Line 35 multiplies the value of a, which is 7,</strong><br>
+<strong>37 REM by the value of b, which is 4,</strong><br>
+<strong>38 REM The result is 28 which is now the value of c.</strong></code></p>
+<p>&nbsp;</p>
+<h4><em><u>How to divide a variable by a number</u></em></h4>
+<p><code><strong>39 LET a = a / 2</strong><br>
+<strong>40 REM Line 39 divides the value of a by 2.</strong><br>
+<strong>41 REM If we write LET a = 2 / a it would divide 2 by a.</strong></code></p>
+<p>&nbsp;</p>
+<h4><em><u>How to divide one variable by another variable</u></em></h4>
+<p><code><strong>50 LET a = 8 :&nbsp; LET b = 3&nbsp; :&nbsp; LET c = a / b</strong><br>
+<strong>51 REM Line 50 divides the value of a, which is 8,</strong><br>
+<strong>52 REM by the value of b, which is 3,</strong><br>
+<strong>53 REM The result is 2.66667, which is now the value of c.</strong></code></p>
+<p><strong>&nbsp;</strong><strong>&nbsp;</strong></p>
+<h4><em><u>How to raise a variable to a power</u></em></h4>
+<p><code><strong>60 LET g = g </strong><strong>˄</strong><strong> 4</strong><br>
+<strong>61 REM Line 60 raises g to the power 4</strong><br>
+<strong>62 REM which changes it to be&nbsp; g * g * g * g</strong></code></p>
+<h4><em><u>How to raise a variable to the power of another variable</u></em></h4>
+<p><code><strong>70 LET a = 2 :&nbsp; LET b = 5&nbsp; :&nbsp; LET c = a </strong><strong>˄</strong><strong> b</strong><br>
+<strong>71 REM Line 70 raises the value of a, which is 2,</strong><br>
+<strong>72 REM to the power b, which is 5,</strong><br>
+<strong>73 REM so the result is&nbsp; 2 * 2 * 2 * 2 * 2, which is 32.</strong><br>
+<strong>74 REM So the value of c is now 32.</strong></code></p>
+<p><strong>&nbsp;</strong><strong>&nbsp;</strong></p>
+<p><em><u>How to test for true or false</u></em><br>
+<code><strong>80 LET h = (7 = 9)</strong><br>
+<strong>81 REM Line 80 sets h to 1 (which means true) if 7 is equal to 9</strong><br>
+<strong>82 REM or to 0 (which means false) if 7 is not equal to 9</strong><br>
+<strong>83 REM So the value of h is now 0 because 7 is not equal 9.</strong></code><br>
+<strong>&nbsp;</strong><strong>&nbsp;</strong></p>
+<p><em><u>How to test variables for true or false</u></em><br>
+<code><strong>90 LET a = 6 :&nbsp; LET b = 6&nbsp; :&nbsp; LET c = (a = b)</strong><br>
+<strong>91 REM Line 90 tests to see if the value of a, which is 6,</strong><br>
+<strong>92 REM is equal to the value of b, which is also 6,</strong><br>
+<strong>93 REM and sets c to be 1 (true if they are equal).</strong><br>
+<strong>94 REM So c is now 1.</strong></code></p>
+<p>&nbsp;</p>
+<h1><strong>Example Program</strong></h1>
+<p>This program draws a number of colour rectangles inside each other.<br>
+Line 20 selects the paper colour for the rectangle.<br>
+Lines 30 to 70 calculate where to draw the rectangle and how big it is.<br>
+In Line 90 to 130 we draw the rectangle and Line 140 to 150 loop&nbsp;around drawing all the rectangles.</p>
+<pre class=" language-objectivec"><code class=" language-objectivec"><span class="token number">10</span> CLS
+<span class="token number">11</span> REM Clear the screen
+<span class="token number">20</span> LET p<span class="token operator">=</span><span class="token number">1</span>
+<span class="token number">21</span> REM Start the paper colour at <span class="token number">1</span> <span class="token punctuation">(</span>BLUE<span class="token punctuation">)</span>
+<span class="token number">30</span> FOR k<span class="token operator">=</span><span class="token number">20</span> TO <span class="token number">10</span> STEP <span class="token operator">-</span><span class="token number">2</span>
+<span class="token number">31</span> REM Count from <span class="token number">20</span> down to <span class="token number">10</span> <span class="token keyword">in</span> steps of <span class="token number">2</span>
+<span class="token number">40</span> LET x<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token operator">-</span>k<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span>
+<span class="token number">41</span> REM Calculate how many spaces along to start drawing the first rectangle
+<span class="token number">50</span> LET w<span class="token operator">=</span>k<span class="token operator">+</span><span class="token number">4</span>
+<span class="token number">51</span> REM Calculate the width of the rectangle
+<span class="token number">60</span> LET y<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token operator">-</span>k<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span>
+<span class="token number">61</span> REM Calculate how many spaces down to start
+<span class="token number">70</span> LET h<span class="token operator">=</span>k
+<span class="token number">71</span> REM Calculate the height
+<span class="token number">80</span> PAPER p
+<span class="token number">81</span> REM Select the paper colour
+<span class="token number">90</span> FOR n<span class="token operator">=</span>y TO y<span class="token operator">+</span>h
+<span class="token number">91</span> REM Count from the starting vertical position down to the end
+<span class="token number">100</span> FOR j<span class="token operator">=</span>x TO x<span class="token operator">+</span>w
+<span class="token number">101</span> REM Count from the starting horizontal position along to the end
+<span class="token number">110</span> PRINT AT n<span class="token punctuation">,</span>j<span class="token punctuation">;</span><span class="token string">"#"</span>
+<span class="token number">111</span> REM draw a # on the screen
+<span class="token number">120</span> NEXT j
+<span class="token number">121</span> REM Count to the next position along
+<span class="token number">130</span> NEXT n
+<span class="token number">131</span> REM Count to the next position down
+<span class="token number">140</span> LET p<span class="token operator">=</span>p<span class="token operator">+</span><span class="token number">1</span>
+<span class="token number">141</span> REM select the next paper colour
+<span class="token number">150</span> NEXT k
+<span class="token number">151</span> REM Count to the next square</code></pre>
+								
+								
+								<p>
+																	</p>
+
+								<hr> 
+								
+								<div id="comments">
+								        
+																	
+								</div> 
+
+							</div>
+
+						</div>
+						<div class="col-md-3 sidebar section-right">
+
+															<div class="widget">
+
+
+									<h3 class="title">Try it yourself!!</h3>
+									
+
+									<a target="_blank" href="basin://run:http://everychildcancode.com/lessons/lesson3.bas" class="btn-info btn btn-lg btn-block">Run the example in BASin</a>
+									<a target="_blank" href="basin://" class="btn-success btn btn-lg btn-block">Open BASin</a>
+
+									<div class="text">
+									<p>Practice your coding with the BASin coding teacher.</p>
+									<p>Try to code at least one program using the five codewords you have 
+									learned in this lesson, and any other codewords you have learned from the previous lessons.</p>
+									</div>
+
+									<div class="alert alert-info">
+										You need to download BASin, your friendly coding teacher, before you can try writing your own code.
+									</div>
+									<a target="_blank" href="http://everychildcancode.com/tools/BASin_setup.exe" class="btn-dark btn btn-lg btn-block">Get BASin Here</a>
+								</div>	
+							
+
+							
+
+		
+			
+							    
+						</div>	
+					</div>		
+				</div>
+				         
+	        
+		</div>				   
+	</div>	
+
+</div>
+			
+
+
+	
+
+
+
+	<div class="footer">
+		Copyright © 2015   &nbsp;  Retro Computers Limited - Home of the ZX Vega with 1,000 games
+	</div>
+	<script src="./Lesson_files/prism.js"></script> 
+</body></html>

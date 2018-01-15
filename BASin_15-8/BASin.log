@@ -1,0 +1,100 @@
+BASin started at 3/11/2017 5:20:33 PM
+5:20:33 PM BASin DIR is C:\BASin_15-8
+5:20:33 PM Create BASin main window
+5:20:33 PM Detected OS: Microsoft Windows Future Windows version (unknown) Version 6.1 Build 7601 Service Pack 1
+5:20:33 PM Creating Editor sound waves
+5:20:33 PM Accept Dragged Files
+5:20:33 PM Hook Main Window for Keypresses
+5:20:33 PM Create Display Window
+5:20:33 PM Create graphics critical section
+5:20:33 PM Init Graphics - LUTs and 2xSAI
+5:20:33 PM Create Worker Thread
+5:20:33 PM Load 48k ROM from C:\BASin_15-8\48.rom
+5:20:33 PM Create Windows - UDGGrabWindow
+5:20:33 PM Create Windows - EvaluationWindow
+5:20:33 PM Create Windows - QueryWindow
+5:20:33 PM Create Windows - BreakpointsWindow
+5:20:33 PM Create Windows - BPProperties
+5:20:33 PM Create Windows - LogWindow
+5:20:33 PM Create Windows - WatchWindow
+5:20:33 PM Create Windows - WatchProperties
+5:20:34 PM Create Windows - VariablesWindow
+5:20:34 PM Create Windows - SpecialVarsWindow
+5:20:34 PM Create Windows - SysVarsWindow
+5:20:34 PM Create Windows - HexWindow
+5:20:34 PM Create Windows - AboutBox
+5:20:34 PM Create Windows - CommandWindow
+5:20:34 PM Create Windows - FindForm
+5:20:34 PM Create Windows - ReplaceForm
+5:20:34 PM Create Windows - MessageForm
+5:20:34 PM Create Windows - ErrorForm
+5:20:34 PM Create Windows - TokenForm
+5:20:34 PM Create Windows - TapeWindow
+5:20:34 PM Create Windows - MemBlockWindow
+5:20:34 PM Create Windows - MemMapWindow
+5:20:34 PM Create Windows - UDGWindow
+5:20:34 PM Create Windows - UDGNew
+5:20:34 PM Create Windows - RenumberForm
+5:20:34 PM Create Windows - BinaryWindow
+5:20:34 PM Create Windows - OptionsWindow
+5:20:34 PM Create Windows - AddCodeWindow
+5:20:34 PM Create Windows - ColoursWindow
+5:20:34 PM Create Windows - GOSUBWindow
+5:20:34 PM Create Windows - BEEPWindow
+5:20:34 PM Create Windows - ErrorDescriptions
+5:20:34 PM Create Windows - BlockProperties
+5:20:34 PM Create Windows - PrinterForm
+5:20:34 PM Create Windows - PrintForm
+5:20:34 PM Create Printer Object
+5:20:34 PM Create Windows - ProfileForm
+5:20:34 PM Create Windows - ProgInfoForm
+5:20:34 PM Create Windows - CPUWindow
+5:20:34 PM Create Windows - AsmEditorWindow
+5:20:34 PM Create Windows - AssembleForm
+5:20:34 PM Create Windows - GridSetupWindow
+5:20:34 PM Create Windows - BinaryGrabWindow
+5:20:34 PM Create Windows - ScrPaintForm
+5:20:34 PM Create Windows - BrushSelectorForm
+5:20:34 PM Create Windows - TextForm
+5:20:34 PM Create Windows - BMPImportForm
+5:20:34 PM Create Windows - ScrPreviewForm
+5:20:34 PM Create Windows - AnimPreviewWindow
+5:20:34 PM Create Windows - VectorForm
+5:20:34 PM Create Windows - VectEditForm
+5:20:34 PM Done Window creation
+5:20:34 PM Init Emulation
+5:20:34 PM Load 48k ROM from C:\BASin_15-8\48.Rom
+5:20:34 PM Load 128k FROM from C:\BASin_15-8\Plus2.Rom
+5:20:34 PM Modify ROMs
+5:20:34 PM Build Emulation LUTs
+5:20:34 PM Set up Emulation Graphics
+5:20:34 PM Create Screen LUT
+5:20:34 PM Loading Options
+5:20:34 PM INI File loaded
+5:20:34 PM Placing Windows
+5:20:34 PM Create Graphics Surfaces
+5:20:35 PM Load Editor Font
+5:20:35 PM Failed to load Editor Font
+5:20:35 PM Initialise Sound
+5:20:35 PM Get Sound caps
+5:20:35 PM Max Sample rate is 200000
+5:20:35 PM Using 44100 Hz
+5:20:35 PM 16 bit sound supported
+5:20:35 PM 8 bit sound supported
+5:20:35 PM Using 16 bit sound
+5:20:35 PM Using Stereo sound
+5:20:35 PM Creating Editor sound waves
+5:20:35 PM Showing Window - BASinOutput
+5:20:35 PM Showing Window - DisplayWindow
+5:20:35 PM Startup Done
+5:20:35 PM Error in MIDIOutOpen()
+5:20:35 PM Modify ROMs
+5:21:27 PM User requested Quit
+5:21:27 PM Saving Options
+5:21:27 PM Write Session.bin
+5:21:27 PM Stored Emulation State to C:\BASin_15-8\Session.bin
+5:21:27 PM Close Emulation
+5:21:27 PM Destroy Worker Thread
+5:21:27 PM Closing Sound
+5:21:27 PM Quit success - Bye bye!
+5:21:27 PM Remove graphics critical section

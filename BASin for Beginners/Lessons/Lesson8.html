@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)http://everychildcancode.com/lesson-1/ -->
+<html lang="en-US" prefix="og: http://ogp.me/ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 8 - Every Child Can CodeEvery Child Can Code</title>
+    <!-- Favicon -->
+    <link rel="icon" href="./Lesson_files/favicon.png" type="image/x-icon"> 
+    <!-- Bootstrap core CSS -->
+    <link href="./Lesson_files/bootstrap.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="./Lesson_files/style.css" rel="stylesheet">
+  	<link href="./Lesson_files/css" rel="stylesheet" type="text/css">
+</head>
+<body class="single single-post postid-105 single-format-standard logged-in">
+
+    <header role="banner">
+        <nav role="navigation" class="navbar" id="topnav">
+            <div class="navbar-header">
+              	<a class="navbar-brand none" href="http://everychildcancode.com/" title="Every Child Can Code">
+    				<div class="branding">
+    					<h1 class="tagline">Every Child Can Code</h1>
+    				</div>
+    			</a>			
+            </div>
+        </nav>
+    </header>
+    
+  
+
+	
+			
+<div class="container">		
+	<div class="row singles">
+	
+		<div class="col-md-12 single-in">
+		
+						
+<div id="sub-menu">
+<ul id="menu-lessons" class="nav nav-pills">
+<li class="menu-item"><a title="Lesson 1" href="Lesson1.html">Lesson 1</a></li>
+<li class="menu-item"><a title="Lesson 2" href="Lesson2.html">Lesson 2</a></li>
+<li class="menu-item"><a title="Lesson 3" href="Lesson3.html">Lesson 3</a></li>
+<li class="menu-item"><a title="Lesson 4" href="Lesson4.html">Lesson 4</a></li>
+<li class="menu-item"><a title="Lesson 5" href="Lesson5.html">Lesson 5</a></li>
+<li class="menu-item"><a title="Lesson 6" href="Lesson6.html">Lesson 6</a></li>
+<li class="menu-item"><a title="Lesson 7" href="Lesson7.html">Lesson 7</a></li>
+<li class="menu-item active"><a title="Lesson 8" href="Lesson8.html">Lesson 8</a></li>
+<li class="menu-item"><a title="Lesson 9" href="Lesson9.html">Lesson 9</a></li>
+<li class="menu-item"><a title="Lesson 10" href="Lesson10.html">Lesson 10</a></li>
+</ul>		            
+</div>
+         
+				
+				<div class="sing-tit-cont">
+					<h3 class="sing-tit">Lesson 8</h3>
+									</div>
+				<div class="container main">
+
+					<div class="row">
+						<div class="sing-cont col-md-9">
+							
+							<div class="sing-spacer">
+							
+								<h2 style="text-align: center;"><strong>SIN, COS, TAN, EXP, LN</strong></h2>
+<p><strong>&nbsp;</strong></p>
+<p><strong>&nbsp;</strong>In this lesson we will learn some more mathematical codewords. The first three of them are used in trigonometry calculations, and relate to angles (degrees and radians). The other two are related to logarithms and exponentials. As with the codewords in Lesson 7, if you have not yet learned about trigonometry, radians, exponentials or logarithms, don’t worry. Just ask your maths teacher what they mean, or if you prefer you can skip these few codewords and come back to them later when you’ve learned their meaning. The same applies if you have not yet been taught about radians.</p>
+<p>&nbsp;</p>
+<p><strong>SIN </strong>This codeword tells the computer to calculate the sine of an angle.</p>
+<p><strong>COS </strong>This codeword tells the computer to calculate the cosine of an angle.</p>
+<p><strong>TAN </strong>This codeword tells the computer to calculate the tangent of an angle.</p>
+<p><strong>EXP </strong>This codeword tells the computer to calculate the value of “e” raised to a given power. For example, e<sup>2 </sup>means “e raised to the power 2” (also known as “e squared”). And e<sup>3 </sup>means “e raised to the power 3” (also known as “e cubed”). In mathematics “e” is known as the “exponential” or “natural” number, and its value is 2.7182818 . . . . . (never ending).</p>
+<p><strong>LN </strong>This codeword tells the computer to calculate what we call the “natural logarithm” of a number, also called the “logarithm to base e”.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3><u>The <strong>SIN</strong> codeword</u></h3>
+<blockquote><p>The SIN codeword is a function.</p>
+<p>The SIN codeword gives the sine of an angle.</p></blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h4><em><u>How to use the SIN codeword</u></em></h4>
+<p>The SIN codeword must be followed by the angle or value for which you want the computer to determine its sine. This angle or value must be given in <em>radians</em>. You can convert an angle in degrees into radians by multiplying the number of degrees by π and then dividing the result by 180. So an angle in radians = ( angle in degrees * π / 180).</p>
+<p>&nbsp;</p>
+<p>For example, the program line:</p>
+<p>&nbsp;</p>
+<p><code><strong>59 &nbsp; LET x = SIN&nbsp; 4</strong></code></p>
+<p><strong>&nbsp;</strong></p>
+<p>will return the sine of the angle 2.4 radians, and assign it to x</p>
+<p>and the line:</p>
+<p>&nbsp;</p>
+<p><code><strong>60 &nbsp; LET c = SIN (a – b)</strong></code></p>
+<p>&nbsp;</p>
+<p>will assign to the variable c the value of the expression sine (a-b), where a and b are in radians. Note here that when we tell the computer to determine the value of the sine of an expression, rather than just the sine of a single variable, we must put that expression inside brackets as we have done in line 60.</p>
+<p>Note that SIN returns a positive value for angles between 0 and 180 degrees (π radians), and a negative value for angles between 180 and 360 degrees (π and 2* π radians).</p>
+<p>&nbsp;</p>
+<h3><u>The <strong>COS</strong> codeword</u></h3>
+<blockquote><p>The COS codeword is a function.</p>
+<p>The COS codeword gives the cosine of an angle.</p></blockquote>
+<p>&nbsp;</p>
+<h4><em><u>How to use the COS codeword</u></em></h4>
+<p>The COS codeword must be followed by the angle or value for which you want the computer to determine its cosine. This angle or value must be given in <em>radians</em>. You can convert an angle in degrees into radians by multiplying the number of degrees by π and then dividing the result by 180. So an angle in radians = ( angle in degrees * π / 180).</p>
+<p>&nbsp;</p>
+<p>For example, the program line:</p>
+<p>&nbsp;</p>
+<p><code><strong>61 &nbsp; LET x = COS&nbsp; 85</strong></code></p>
+<p><strong>&nbsp;</strong></p>
+<p>will return the sine of the angle 1.85 radians, and assign it to x</p>
+<p>and the line:</p>
+<p>&nbsp;</p>
+<p><code><strong>62 &nbsp; LET c = COS (a – b)</strong></code></p>
+<p>&nbsp;</p>
+<p>will assign to the variable c the value of the expression cosine (a-b), where a and b are in radians. Note here that when we tell the computer to determine the value of the cosine of an expression, rather than just the cosine of a single variable, we must put that expression inside brackets as we have done in line 62.</p>
+<p>&nbsp;</p>
+<p>Note that COS returns a negative value for angles from 90 to 270 degrees and a positive value for angles from 0 to 90 degrees and from 270 to 360 degrees.</p>
+<p>&nbsp;</p>
+<h3><u>The <strong>TAN</strong> codeword</u></h3>
+<blockquote><p>TAN gives the tangent of an angle.</p>
+<p>The TAN codeword is a function.</p>
+<p>The TAN codeword gives the tangent of an angle.</p></blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h4><em><u>How to use the TAN codeword</u></em></h4>
+<p>The TAN codeword must be followed by the angle or value for which you want the computer to determine its cosine. This angle or value must be given in <em>radians</em>. You can convert an angle in degrees into radians by multiplying the number of degrees by π and then dividing the result by 180. So an angle in radians = ( angle in degrees * π / 180).</p>
+<p>&nbsp;</p>
+<p>For example, the program line:</p>
+<p>&nbsp;</p>
+<p><code><strong>63 &nbsp; LET x = TAN &nbsp;0.72</strong></code></p>
+<p><strong>&nbsp;</strong></p>
+<p>will return the tangent of the angle 0.72 radians, and assign it to x</p>
+<p>and the line:</p>
+<p>&nbsp;</p>
+<p><code><strong>64 &nbsp; LET c = TAN (a – b)</strong></code></p>
+<p>&nbsp;</p>
+<p>will assign to the variable c the value of the expression tangent (a-b), where a and b are in radians. Note here that when we tell the computer to determine the value of the tangent of an expression, rather than just the tangent of a single variable, we must put that expression inside brackets as we have done in line 64.</p>
+<p>Note that TAN returns a positive value for angles between 0 and 90 degrees. For angles between 90 and 180 degrees, and for angles between 270 and 360 degrees, TAN returns a negative value.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3><u>The <strong>EXP</strong> codeword</u></h3>
+<blockquote><p>The EXP codeword is a function.</p>
+<p>The EXP codeword uses a number which is called “e” in mathematics. “e” is known as the “exponential” or “natural” number, and its value is 2.7182818 . . . . . (never ending).</p>
+<p>The EXP codeword tells the computer to calculate the value of “e” raised to a given power. For example, e<sup>2 </sup>means “e raised to the power 2” (also known as “e squared”). In BASIC this is written e**2.</p>
+<p>And e<sup>3 </sup>means “e raised to the power 3” (also known as “e cubed”). In BASIC this is written e**3.</p></blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h4><em><u>How to use the EXP codeword</u></em></h4>
+<p>The EXP codeword must be followed by the number or value to the power of which you want the computer to raise the number <em>e</em>.</p>
+<p>&nbsp;</p>
+<p>For example, the program line:</p>
+<p>&nbsp;</p>
+<p><code><strong>65 &nbsp; LET x = EXP 4</strong></code></p>
+<p><strong>&nbsp;</strong></p>
+<p>will return the value of <em>e </em>raised to the power 4, and assign it to x</p>
+<p>&nbsp;</p>
+<p>Here is another example:&nbsp; The program line:</p>
+<p>&nbsp;</p>
+<p><code><strong>70 &nbsp; PRINT EXP 1</strong></code></p>
+<p><strong>&nbsp;</strong></p>
+<p>tells the computer to display 2.7182818 on the screen, which is the value of <em>e</em>. This is because EXP 1 means e<sup>1 </sup>(in other words <em>e</em> raised to the power 1, which is the same as e itself).</p>
+<p>&nbsp;</p>
+<p>Here is yet another example. The line:</p>
+<p>&nbsp;</p>
+<p><code><strong>66 &nbsp; LET c = EXP (a – b)</strong></code></p>
+<p>&nbsp;</p>
+<p>will assign to the variable c the value of the expression “<em>e</em> raised to the power (a-b)”. Note here that when we tell the computer to determine the value of <em>e</em> raised to a power which is given as an expression, rather than just to the power of a single variable, we must put that expression inside brackets as we have done in line 66.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3><u>The <strong>LN</strong> codeword</u></h3>
+<blockquote><p>The LN codeword is a function.</p>
+<p>LN tells the computer to calculate what we call the natural logarithm of a value or number (this is the logarithm to base <em>e</em>).</p></blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h4><em><u>How to use the LN codeword</u></em></h4>
+<p>The LN codeword must be followed by the number or value whose natural logarithm you want the computer to calculate.</p>
+<p>&nbsp;</p>
+<p>For example, the program line:</p>
+<p>&nbsp;</p>
+<p><code><strong>67 &nbsp; LET x = LN 4</strong></code></p>
+<p><strong>&nbsp;</strong></p>
+<p>will return the value of the natural logarithm of 4, and assign it to x</p>
+<p>&nbsp;</p>
+<p>Here is another example. The line:</p>
+<p>&nbsp;</p>
+<p><code><strong>68 &nbsp; LET c = LN (a – b)</strong></code></p>
+<p>&nbsp;</p>
+<p>will assign to the variable c the value of the natural logarithm of (a-b). Note here that when we tell the computer to determine the natural logarithm of an expression, rather than the natural logarithm of a number or the value of a single variable, we must put that expression inside brackets as we have done in line 68.</p>
+<p>It is important to remember that the number following LN must be greater than 0. And if it is a variable or an expression then its value must be greater than 0. If you try to tell the computer to return the natural logarithm of a negative number you will have a bug in your program.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h1><strong>Example Program</strong></h1>
+<p>This is a more complicated program to draw a clock.<br>
+ Line 410 to 460 ask for the time to display.<br>
+ Lines 710 to 720 draw the clock face. In Lines 740 to 820 we draw the hour marks calculating where they appear. Line 830 calculates the angle for the big hand and line 840 calculates the angle for the small hand.Lines 850 and 860 draw the hands using the subroutine from line 880 to 920</p>
+<pre class=" language-objectivec"><code class=" language-objectivec"> 
+ <span class="token number">410</span> BRIGHT <span class="token number">0</span><span class="token punctuation">:</span> INPUT <span class="token string">"Enter the hour (1-12) 0=finish "</span><span class="token punctuation">;</span>h
+ <span class="token number">415</span> REM Ask <span class="token keyword">for</span> the hour
+ <span class="token number">420</span> IF h<span class="token operator">&lt;</span><span class="token number">0</span> OR h<span class="token operator">&gt;</span><span class="token number">12</span> THEN GO TO <span class="token number">410</span>
+ <span class="token number">425</span> REM check <span class="token keyword">if</span> we are finished and <span class="token keyword">if</span> so GOTO <span class="token number">490</span>
+ <span class="token number">430</span> IF h<span class="token operator">=</span><span class="token number">0</span> THEN GO TO <span class="token number">490</span>
+ <span class="token number">440</span> INPUT <span class="token string">"Enter the minutes (0-59)"</span><span class="token punctuation">;</span>m
+ <span class="token number">445</span> REM Ask <span class="token keyword">for</span> the minutes
+ <span class="token number">450</span> IF m<span class="token operator">&lt;</span><span class="token number">0</span> OR m<span class="token operator">&gt;</span><span class="token number">60</span> THEN GO TO <span class="token number">440</span>
+ <span class="token number">455</span> REM check that it is not out of range and <span class="token keyword">if</span> so ask again
+ <span class="token number">460</span> IF m<span class="token operator">=</span><span class="token number">60</span> THEN GO TO <span class="token number">500</span>
+ <span class="token number">465</span> REM Check <span class="token keyword">if</span> we are finished
+ <span class="token number">470</span> GO SUB <span class="token number">700</span>
+ <span class="token number">475</span> REM draw our clock
+ <span class="token number">480</span> GO TO <span class="token number">410</span>
+ <span class="token number">485</span> REM Loop back to the beginning
+ <span class="token number">490</span> BRIGHT <span class="token number">0</span><span class="token punctuation">:</span> CLS <span class="token punctuation">:</span> LET m$<span class="token operator">=</span><span class="token string">"You can see the listing for this program in the printed documentation"</span><span class="token punctuation">:</span> GO SUB <span class="token number">520</span>
+ <span class="token number">500</span> PAUSE <span class="token number">0</span>
+ <span class="token number">510</span> STOP
+ <span class="token number">520</span> LET l<span class="token operator">=</span>LEN <span class="token punctuation">(</span>m$<span class="token punctuation">)</span>
+ <span class="token number">530</span> IF l<span class="token operator">&gt;</span><span class="token number">32</span> THEN GO TO <span class="token number">560</span>
+ <span class="token number">540</span> PRINT m$
+ <span class="token number">550</span> RETURN
+ <span class="token number">560</span> LET o<span class="token operator">=</span><span class="token number">33</span>
+ <span class="token number">570</span> LET c$<span class="token operator">=</span>m$<span class="token punctuation">(</span>o TO o<span class="token punctuation">)</span>
+ <span class="token number">580</span> IF <span class="token punctuation">(</span>c$<span class="token operator">=</span><span class="token string">" "</span><span class="token punctuation">)</span> OR <span class="token punctuation">(</span><span class="token punctuation">(</span>o<span class="token operator">&lt;</span><span class="token number">32</span><span class="token punctuation">)</span> AND <span class="token punctuation">(</span><span class="token punctuation">(</span>c$<span class="token operator">=</span><span class="token string">"."</span><span class="token punctuation">)</span> OR <span class="token punctuation">(</span>c$<span class="token operator">=</span><span class="token string">","</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> THEN GO TO <span class="token number">620</span>
+ <span class="token number">590</span> LET o<span class="token operator">=</span>o<span class="token number">-1</span>
+ <span class="token number">600</span> IF o<span class="token operator">&gt;</span><span class="token number">0</span> THEN GO TO <span class="token number">570</span>
+ <span class="token number">610</span> LET o<span class="token operator">=</span><span class="token number">32</span>
+ <span class="token number">620</span> IF m$<span class="token punctuation">(</span>o TO o<span class="token punctuation">)</span><span class="token operator">=</span><span class="token string">" "</span> THEN GO TO <span class="token number">650</span>
+ <span class="token number">630</span> PRINT m$<span class="token punctuation">(</span><span class="token number">1</span> TO o<span class="token punctuation">)</span>
+ <span class="token number">640</span> GO TO <span class="token number">660</span>
+ <span class="token number">650</span> PRINT m$<span class="token punctuation">(</span><span class="token number">1</span> TO o<span class="token number">-1</span><span class="token punctuation">)</span>
+ <span class="token number">660</span> LET m$<span class="token operator">=</span>m$<span class="token punctuation">(</span>o<span class="token operator">+</span><span class="token number">1</span> TO <span class="token punctuation">)</span>
+ <span class="token number">670</span> GO TO <span class="token number">520</span>
+ <span class="token number">700</span> BRIGHT <span class="token number">0</span><span class="token punctuation">:</span> PAPER <span class="token number">7</span><span class="token punctuation">:</span> INK <span class="token number">1</span><span class="token punctuation">:</span> CLS
+ <span class="token number">710</span> LET r1<span class="token operator">=</span><span class="token number">80</span><span class="token punctuation">:</span> LET r2<span class="token operator">=</span><span class="token number">65</span>
+ <span class="token number">715</span> REM Set the size of the clock
+ <span class="token number">716</span> REM r1 is the radius of the clock face
+ <span class="token number">717</span> REM r2 is the radius of the inner circle
+ <span class="token number">720</span> CIRCLE <span class="token number">128</span><span class="token punctuation">,</span><span class="token number">88</span><span class="token punctuation">,</span>r1
+ <span class="token number">725</span> REM Draw the clock face
+ <span class="token number">730</span> BRIGHT <span class="token number">1</span>
+ <span class="token number">740</span> FOR n<span class="token operator">=</span><span class="token number">0</span> TO <span class="token number">11</span>
+ <span class="token number">745</span> REM Here we draw the hours on the clock
+ <span class="token number">750</span> LET a<span class="token operator">=</span><span class="token number">2</span><span class="token operator">*</span>PI<span class="token operator">*</span>n<span class="token operator">/</span><span class="token number">12</span>
+ <span class="token number">755</span> REM Calculate the angle of the hour
+ <span class="token number">760</span> LET x1<span class="token operator">=</span>INT <span class="token punctuation">(</span><span class="token number">128</span><span class="token operator">+</span>SIN <span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token operator">*</span>r1<span class="token punctuation">)</span><span class="token punctuation">:</span> LET x2<span class="token operator">=</span>INT <span class="token punctuation">(</span><span class="token number">128</span><span class="token operator">+</span>SIN <span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token operator">*</span>r2<span class="token punctuation">)</span>
+ <span class="token number">770</span> LET y1<span class="token operator">=</span>INT <span class="token punctuation">(</span><span class="token number">88</span><span class="token operator">+</span>COS <span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token operator">*</span>r1<span class="token punctuation">)</span><span class="token punctuation">:</span> LET y2<span class="token operator">=</span>INT <span class="token punctuation">(</span><span class="token number">88</span><span class="token operator">+</span>COS <span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token operator">*</span>r2<span class="token punctuation">)</span>
+ <span class="token number">775</span> REM Calculate the positions of the hours <span class="token keyword">for</span> the markers
+ <span class="token number">780</span> LET xc<span class="token operator">=</span>INT <span class="token punctuation">(</span>x2<span class="token operator">/</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">:</span> LET yc<span class="token operator">=</span>INT <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">175</span><span class="token operator">-</span>y2<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">8</span><span class="token punctuation">)</span>
+ <span class="token number">785</span> REM Calculate the text position of where to print the numbers
+ <span class="token number">790</span> PLOT x1<span class="token punctuation">,</span>y1<span class="token punctuation">:</span> DRAW x2<span class="token operator">-</span>x1<span class="token punctuation">,</span>y2<span class="token operator">-</span>y1
+ <span class="token number">795</span> REM Draw the hour mark
+ <span class="token number">800</span> IF <span class="token punctuation">(</span>n<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span> THEN PRINT AT yc<span class="token punctuation">,</span>xc<span class="token number">-1</span><span class="token punctuation">;</span><span class="token string">"12"</span>
+ <span class="token number">805</span> REM Draw the <span class="token number">12</span> hour
+ <span class="token number">810</span> IF <span class="token punctuation">(</span>n<span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">)</span> THEN PRINT AT yc<span class="token punctuation">,</span>xc<span class="token punctuation">;</span>n
+ <span class="token number">815</span> REM Draw the other hours
+ <span class="token number">820</span> NEXT N
+ <span class="token number">825</span> REM Draw all the hour marks
+ <span class="token number">830</span> LET b<span class="token operator">=</span>m<span class="token operator">*</span><span class="token number">360</span><span class="token operator">/</span><span class="token number">60</span>
+ <span class="token number">835</span> REM Calculate the angle <span class="token keyword">for</span> the minute hand
+ <span class="token number">840</span> LET s<span class="token operator">=</span>h<span class="token operator">*</span><span class="token number">360</span><span class="token operator">/</span><span class="token number">12</span><span class="token operator">+</span><span class="token punctuation">(</span>m<span class="token operator">/</span><span class="token number">60</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token number">369</span><span class="token operator">/</span><span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+ <span class="token number">845</span> REM Calculate the angle <span class="token keyword">for</span> the hour hand
+ <span class="token number">850</span> INK <span class="token number">1</span><span class="token punctuation">:</span> LET a<span class="token operator">=</span>b<span class="token punctuation">:</span> LET r<span class="token operator">=</span><span class="token number">62</span><span class="token punctuation">:</span> GO SUB <span class="token number">880</span>
+ <span class="token number">855</span> REM Use our subroutine to draw the hour hand
+ <span class="token number">860</span> INK <span class="token number">0</span><span class="token punctuation">:</span> LET a<span class="token operator">=</span>s<span class="token punctuation">:</span> LET r<span class="token operator">=</span><span class="token number">45</span><span class="token punctuation">:</span> GO SUB <span class="token number">880</span>
+ <span class="token number">865</span> REM Use our subroutine to draw the minute hand
+ <span class="token number">870</span> RETURN
+ <span class="token number">880</span> REM This is a subroutine to draw a clock hand
+ <span class="token number">881</span> REM a is the angle of the hand and r is the radius of the hand
+ <span class="token number">885</span> LET a<span class="token operator">=</span><span class="token number">2</span><span class="token operator">*</span>PI<span class="token operator">*</span>a<span class="token operator">/</span><span class="token number">360</span>
+ <span class="token number">886</span> REM Calculate the angle of the hand <span class="token keyword">in</span> radians
+ <span class="token number">890</span> LET x<span class="token operator">=</span>INT <span class="token punctuation">(</span><span class="token number">128</span><span class="token operator">+</span>SIN <span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token operator">*</span>r<span class="token punctuation">)</span>
+ <span class="token number">895</span> REM Calculate the x position of the hand
+ <span class="token number">900</span> LET y<span class="token operator">=</span>INT <span class="token punctuation">(</span><span class="token number">88</span><span class="token operator">+</span>COS <span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token operator">*</span>r<span class="token punctuation">)</span>
+ <span class="token number">905</span> REM calculate the y position of the hand
+ <span class="token number">910</span> PLOT <span class="token number">128</span><span class="token punctuation">,</span><span class="token number">88</span><span class="token punctuation">:</span> DRAW x<span class="token number">-128</span><span class="token punctuation">,</span>y<span class="token number">-88</span>
+ <span class="token number">915</span> REM Draw the hand from the centre to the outer position
+ <span class="token number">920</span> RETURN</code></pre>
+								
+								
+								<p>
+																	</p>
+
+								<hr> 
+								
+								<div id="comments">
+								        
+																	
+								</div> 
+
+							</div>
+
+						</div>
+						<div class="col-md-3 sidebar section-right">
+
+															<div class="widget">
+
+
+									<h3 class="title">Try it yourself!!</h3>
+									
+
+									<a target="_blank" href="basin://run:http://everychildcancode.com/lessons/lesson8.bas" class="btn-info btn btn-lg btn-block">Run the example in BASin</a>
+									<a target="_blank" href="basin://" class="btn-success btn btn-lg btn-block">Open BASin</a>
+
+									<div class="text">
+									<p>Practice your coding with the BASin coding teacher.</p>
+									<p>Try to code at least one program using the five codewords you have 
+									learned in this lesson, and any other codewords you have learned from the previous lessons.</p>
+									</div>
+
+									<div class="alert alert-info">
+										You need to download BASin, your friendly coding teacher, before you can try writing your own code.
+									</div>
+									<a target="_blank" href="http://everychildcancode.com/tools/BASin_setup.exe" class="btn-dark btn btn-lg btn-block">Get BASin Here</a>
+								</div>	
+							
+
+							
+
+		
+			
+							    
+						</div>	
+					</div>		
+				</div>
+				         
+	        
+		</div>				   
+	</div>	
+
+</div>
+			
+
+
+	
+
+	<div class="footer">
+		Copyright © 2015   &nbsp;  Retro Computers Limited - Home of the ZX Vega with 1,000 games
+	</div>
+	<script src="./Lesson_files/prism.js"></script> 
+</body></html>
